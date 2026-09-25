@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chronicles of Bharat: The Heritage Quest</title>
+
+  <style>
+:root{--accent:#d4af37;--bg:#121212;--card:#242424;--muted:#bdbdbd;--border:#454545}*{box-sizing:border-box;margin:0;padding:0}html,body{scroll-behavior:smooth}body{font-family:Arial,sans-serif;background:var(--bg);color:#f5f5f5;line-height:1.6;min-height:100vh}body:before{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(#121212d9,#121212f2),url('https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1800&q=85') center/cover no-repeat}.welcome-screen{position:fixed;inset:0;z-index:50;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 35%,#542f4fdd,#1d1229f5 55%,#090b18 100%),url('https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1800&q=85') center/cover}.welcome-screen.hidden{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .7s,visibility .7s}.signup-screen{position:fixed;inset:0;z-index:45;display:grid;place-items:center;overflow:auto;padding:25px;background:radial-gradient(circle at 50% 35%,#542f4fdd,#1d1229f5 55%,#090b18 100%),url('https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1800&q=85') center/cover}.signup-screen[hidden],.login-screen[hidden]{display:none}.signup-card,.login-card{position:relative;z-index:2;width:min(460px,92%);padding:32px 28px;border:1px solid #ffb6d988;border-radius:24px;background:#ffb6d51c;box-shadow:0 0 35px #ff9ac455,inset 0 0 25px #ffffff0d;backdrop-filter:blur(10px)}.login-screen{position:fixed;inset:0;z-index:44;display:grid;place-items:center;overflow:hidden;padding:25px;background:radial-gradient(circle at 50% 35%,#542f4fdd,#1d1229f5 55%,#090b18 100%),url('https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1800&q=85') center/cover}.account-link{display:block;margin:14px auto 0;border:0;background:transparent;color:#ffd0e5;text-decoration:underline;cursor:pointer;font:inherit}.account-link:hover{color:#fff}.heart-field{position:absolute;inset:0;overflow:hidden}.heart-field span{position:absolute;bottom:-60px;color:#ffb6d9aa;font-size:clamp(1.2rem,3vw,2.5rem);text-shadow:0 0 12px #ff9fc4;animation:heartRise 10s linear infinite}.heart-field span:nth-child(1){left:7%;animation-delay:0s}.heart-field span:nth-child(2){left:18%;animation-delay:2s}.heart-field span:nth-child(3){left:31%;animation-delay:5s}.heart-field span:nth-child(4){left:44%;animation-delay:1s}.heart-field span:nth-child(5){left:57%;animation-delay:7s}.heart-field span:nth-child(6){left:68%;animation-delay:3s}.heart-field span:nth-child(7){left:77%;animation-delay:6s}.heart-field span:nth-child(8){left:86%;animation-delay:4s}.heart-field span:nth-child(9){left:93%;animation-delay:8s}.heart-field span:nth-child(10){left:38%;animation-delay:9s}@keyframes heartRise{0%{transform:translateY(0) rotate(0deg) scale(.7);opacity:0}15%{opacity:.85}100%{transform:translateY(-115vh) translateX(55px) rotate(25deg) scale(1.15);opacity:0}}.signup-icon{text-align:center;font-size:3.5rem;filter:drop-shadow(0 0 12px #ffc1df)}.signup-kicker{text-align:center;color:#ffc2df;font-size:.78rem;font-weight:bold;letter-spacing:2px;margin:8px 0}.signup-card h2{text-align:center;color:#fff;font-family:Georgia,serif;font-size:clamp(1.5rem,4vw,2.2rem);text-shadow:0 3px 15px #ff8fc0aa}.signup-intro{text-align:center;color:#ffe8f2;margin:8px 0 22px}.signup-form{display:grid;gap:8px}.signup-form label{color:#ffd0e5;font-weight:bold}.signup-form input{width:100%;border:1px solid #ffc1dc;border-radius:6px;background:#241827cc;color:#fff;padding:11px 12px;font:inherit;margin-bottom:5px}.signup-form input:focus{outline:2px solid #ffafd0;outline-offset:1px}.signup-error{color:#ffd0d0;background:#5a2020aa;border:1px solid #e57373;border-radius:5px;padding:7px 10px;font-size:.9rem}.signup-btn{display:block;width:100%;margin-top:12px}.welcome-content{position:relative;z-index:2;width:min(850px,92%);padding:clamp(30px,6vw,70px) 25px;text-align:center;border:1px solid #ffb6d955;border-radius:28px;background:#ffb6d514;box-shadow:0 0 45px #ff9ac444,inset 0 0 30px #ffffff0d;backdrop-filter:blur(8px)}.welcome-emblem{font-size:clamp(3rem,8vw,5.5rem);filter:drop-shadow(0 0 16px #ffc1df)}.welcome-kicker{color:#ffc2df;font-weight:bold;letter-spacing:3px;font-size:clamp(.75rem,2vw,1rem);margin:8px 0 14px}.welcome-content h1{color:#fff;font-size:clamp(1.8rem,5vw,4rem);line-height:1.15;text-shadow:0 3px 20px #ff8fc0aa}.welcome-content h1 span{color:#ffd0e5}.welcome-content h2{color:#ffe8f2;font-family:Georgia,serif;font-size:clamp(1rem,2.5vw,1.6rem);font-weight:normal;margin:18px 0}.welcome-promise{color:#ffd2e4;font-size:clamp(.9rem,2vw,1.15rem);letter-spacing:2px}.welcome-promise b{color:#fff;margin:0 5px}.start-quest-btn{margin-top:30px;padding:13px 30px;border:2px solid #ffd1e6;border-radius:30px;background:linear-gradient(135deg,#ffafd0,#d96d9e);color:#351529;font-weight:bold;font-size:1rem;cursor:pointer;box-shadow:0 0 20px #ff9fc477;transition:transform .2s,box-shadow .2s}.start-quest-btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 0 30px #ffb5d8cc}.bubble-field{position:absolute;inset:0;overflow:hidden}.bubble-field span{position:absolute;bottom:-100px;width:clamp(18px,4vw,60px);height:clamp(18px,4vw,60px);border:1px solid #ffc5df88;border-radius:50%;background:#ffb9d51f;box-shadow:inset 8px 8px 15px #fff3,0 0 18px #ff9ec855;animation:rise 13s linear infinite}.bubble-field span:nth-child(1){left:6%;animation-delay:0s}.bubble-field span:nth-child(2){left:17%;width:24px;height:24px;animation-delay:3s}.bubble-field span:nth-child(3){left:29%;animation-delay:7s}.bubble-field span:nth-child(4){left:43%;width:30px;height:30px;animation-delay:1s}.bubble-field span:nth-child(5){left:55%;animation-delay:5s}.bubble-field span:nth-child(6){left:66%;width:22px;height:22px;animation-delay:9s}.bubble-field span:nth-child(7){left:76%;animation-delay:2s}.bubble-field span:nth-child(8){left:88%;width:28px;height:28px;animation-delay:6s}.bubble-field span:nth-child(9){left:12%;animation-delay:10s}.bubble-field span:nth-child(10){left:36%;width:20px;height:20px;animation-delay:4s}.bubble-field span:nth-child(11){left:71%;animation-delay:8s}.bubble-field span:nth-child(12){left:94%;width:18px;height:18px;animation-delay:11s}@keyframes rise{0%{transform:translateY(0) scale(.7);opacity:0}15%{opacity:.8}100%{transform:translateY(-115vh) translateX(70px) scale(1.15);opacity:0}}header{text-align:center;padding:42px 20px;border-bottom:3px solid var(--accent);background:#0009;position:relative}.profile-trigger{position:absolute;top:16px;left:18px;border:1px solid var(--accent);border-radius:20px;background:#292929;color:#fff;padding:8px 14px;cursor:pointer;font:inherit}.profile-trigger:hover{background:var(--accent);color:#111}.map-trigger{position:absolute;top:16px;left:125px;border:1px solid var(--accent);border-radius:20px;background:#292929;color:#fff;padding:8px 14px;cursor:pointer;font:inherit}.map-trigger:hover,.map-trigger.active{background:var(--accent);color:#111}.top-leaderboard{position:absolute;top:14px;right:18px;width:min(255px,calc(100% - 150px));text-align:left;background:#242424ee;border:1px solid var(--accent);border-radius:10px;padding:8px 12px;box-shadow:0 4px 14px #0008;font-size:.78rem}.leaderboard-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;border:0;background:transparent;color:var(--accent);cursor:pointer;font:inherit;font-weight:bold;padding:2px 0}.leaderboard-toggle:hover{color:#fff}.toggle-arrow{font-size:1.1rem;transition:transform .2s}.top-leaderboard.expanded .toggle-arrow{transform:rotate(180deg)}#leaderboardDetails{padding-top:7px}.live-player-count{color:#fff;margin-bottom:5px}.live-dot{display:inline-block;width:8px;height:8px;margin-right:5px;border-radius:50%;background:#55c878;box-shadow:0 0 8px #55c878}.top-player{display:grid;grid-template-columns:1fr auto;gap:2px 8px;color:var(--muted)}.top-player span{grid-column:1/-1;color:var(--accent);font-weight:bold}.top-player strong{color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.top-player b{color:var(--accent);white-space:nowrap}.leaderboard-link{border:0;background:transparent;color:var(--accent);padding:3px 0 0;cursor:pointer;font:inherit}.leaderboard-link:hover{text-decoration:underline}.monument-detail-screen{position:fixed;inset:0;z-index:30;overflow:auto;padding:30px 15px;background:linear-gradient(#121212eF,#121212F8),url('https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1800&q=85') center/cover}.monument-detail-screen[hidden]{display:none}.monument-detail-page{width:min(1000px,100%);margin:auto;background:#242424F2;border:1px solid var(--accent);border-radius:14px;padding:clamp(18px,4vw,35px);box-shadow:0 8px 30px #000}.monument-detail-page article h1{text-transform:none;letter-spacing:0;margin-bottom:8px}.monument-detail-hero{display:grid;grid-template-columns:minmax(260px, .9fr) 1.1fr;gap:25px;align-items:center;margin:18px 0 28px}.monument-detail-hero img{width:100%;height:300px;object-fit:cover;border-radius:10px;border:2px solid var(--accent)}.monument-detail-copy p{color:var(--muted);margin:8px 0 15px}.monument-detail-copy strong{color:var(--accent)}.monument-detail-timeline{border-left:2px solid var(--accent);padding-left:18px}.monument-detail-timeline div{margin:0 0 18px}.monument-detail-timeline strong{color:var(--accent)}@media(max-width:700px){.monument-detail-hero{grid-template-columns:1fr}.monument-detail-hero img{height:230px}.map-layout{grid-template-columns:1fr}.map-frame-wrap,.map-frame-wrap iframe{min-height:280px;height:280px}.map-place-info{border-left:0;border-top:3px solid var(--accent)}}.profile-panel{position:fixed;inset:0;z-index:20;background:#000b;overflow:auto;padding:30px 15px}.profile-page{position:relative;width:min(520px,100%);margin:auto;background:var(--card);border:1px solid var(--accent);border-radius:14px;padding:28px;box-shadow:0 8px 30px #000}.profile-page h2{text-align:center;margin-bottom:15px}.profile-close{position:absolute;top:8px;right:14px;border:0;background:transparent;color:var(--muted);font-size:2rem;cursor:pointer}.profile-avatar{display:grid;place-items:center;width:100px;height:100px;margin:8px auto;border:3px solid var(--accent);border-radius:50%;background:#303030;font-size:3.6rem}.profile-label{text-align:center;color:var(--muted);margin:8px 0}.avatar-options{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:20px}.avatar-option{width:48px;height:48px;border:1px solid #555;border-radius:50%;background:#303030;font-size:1.5rem;cursor:pointer}.avatar-option:hover,.avatar-option.selected{border-color:var(--accent);background:#3a321f}.profile-form{display:grid;gap:8px}.profile-form label{color:var(--accent);font-weight:bold}.profile-form input{border:1px solid var(--accent);border-radius:5px;background:#292929;color:#fff;padding:10px;font:inherit;margin-bottom:6px}.profile-form .control-btn{margin-top:8px}.leaderboard{border-top:1px solid #444;margin-top:25px;padding-top:18px}.leaderboard h3{margin-bottom:8px}.leaderboard ol{padding-left:25px;color:var(--muted)}.leaderboard li{padding:5px}.leaderboard li strong{color:#fff}h1,h2,h3{color:var(--accent);font-family:Georgia,serif}h1{font-size:clamp(1.8rem,5vw,3rem);text-transform:uppercase;letter-spacing:2px}header p{color:var(--muted);margin-top:8px}.main-nav{display:flex;justify-content:center;flex-wrap:wrap;background:#090909;border-bottom:2px solid #333}.tab-btn{border:0;border-bottom:3px solid transparent;background:transparent;color:var(--muted);padding:15px 24px;font-weight:bold;cursor:pointer}.tab-btn:hover,.tab-btn.active{color:var(--accent);background:#202020;border-bottom-color:var(--accent)}main{max-width:1250px;margin:auto}.tab-content{display:none;padding:30px 20px}.tab-content.active{display:block}.speech-controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:#1d1d1d;border:1px solid var(--accent);border-radius:8px;padding:15px;margin-bottom:25px}.heritage-map-section{background:#242424e8;border:1px solid var(--accent);border-radius:12px;padding:20px;margin-bottom:28px;box-shadow:0 4px 14px #0008}.heritage-map-section[hidden]{display:none}.map-page-screen{position:fixed;inset:0;z-index:25;overflow:auto;margin:0;padding:30px max(20px,4vw);border:0;border-radius:0;background:linear-gradient(#121212ee,#121212f8),url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1800&q=85') center/cover}.map-page-screen .map-heading-row{max-width:1250px;margin:0 auto 20px}.map-page-screen .map-layout,.map-page-screen .map-place-list{max-width:1250px;margin-left:auto;margin-right:auto}.map-back-btn{display:block;margin-bottom:12px}.map-heading-row{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;margin-bottom:16px}.map-heading-row h2{margin-bottom:4px}.map-heading-row p{color:var(--muted)}.map-open-link{display:inline-block;text-decoration:none}.map-place-list{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:16px}.map-place-btn{border:1px solid #666;border-radius:20px;background:#303030;color:#fff;padding:8px 13px;cursor:pointer;font:inherit}.map-place-btn:hover,.map-place-btn.active{border-color:var(--accent);background:#3a321f;color:var(--accent)}.map-layout{display:grid;grid-template-columns:minmax(0,2fr) minmax(220px,1fr);gap:16px}.map-frame-wrap{min-height:360px;border:1px solid #555;border-radius:8px;overflow:hidden;background:#111}.map-frame-wrap iframe{display:block;width:100%;height:360px;border:0}.map-place-info{align-self:stretch;background:#1d1d1d;border-left:3px solid var(--accent);border-radius:6px;padding:18px}.map-place-info h3{margin-bottom:6px}.map-place-info p{color:var(--muted);margin:7px 0}.map-place-info a{display:inline-block;margin-top:10px;color:var(--accent);font-weight:bold}.site-language{display:inline-flex;align-items:center;gap:8px;margin-top:16px;color:var(--muted)}.search-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:#1d1d1d;border:1px solid var(--accent);border-radius:8px;padding:13px 15px;margin-bottom:22px}.search-row label{font-weight:bold;color:var(--accent)}input[type=search]{min-width:250px;flex:1;border:1px solid var(--accent);border-radius:5px;background:#292929;color:#fff;padding:9px 13px;font:inherit}.no-results{color:var(--muted);text-align:center;padding:25px}.site-language select,select,.control-btn{border:1px solid var(--accent);border-radius:5px;background:#292929;color:#fff;padding:9px 13px;font:inherit}.control-btn{cursor:pointer}.control-btn:hover{background:var(--accent);color:#111}.timeline-card,.puzzle-card,.quiz-container,.faq-item{background:#242424e8;border:1px solid var(--border);border-radius:10px;padding:22px;margin-bottom:22px;box-shadow:0 4px 14px #0008}.monument-intro{text-align:center;margin-bottom:25px}.monument-intro p{color:var(--muted)}.monument-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}.monument-card{overflow:hidden;background:#242424ed;border:1px solid var(--border);border-radius:10px;box-shadow:0 4px 14px #0008;transition:transform .2s,border-color .2s}.monument-card:hover{transform:translateY(-5px);border-color:var(--accent)}.monument-card img{width:100%;height:175px;object-fit:cover;display:block}.monument-card-body{padding:17px}.monument-card h2{font-size:1.2rem;margin-bottom:4px}.monument-card p{color:var(--muted);font-size:.9rem;margin-bottom:13px}.place-detail{margin-top:30px}.back-btn{background:transparent;color:var(--accent);border:1px solid var(--accent);border-radius:5px;padding:8px 13px;margin-bottom:15px;cursor:pointer;font:inherit}.detail-top-actions{display:flex;justify-content:flex-start;gap:12px;flex-wrap:wrap;margin:0 0 15px}.detail-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;border-top:1px solid #444;padding-top:20px;margin-top:25px}.place-header{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-bottom:18px}.place-figure{flex:0 1 320px}.place-figure img{width:100%;height:205px;object-fit:cover;border-radius:7px;display:block}.place-figure figcaption{text-align:center;color:var(--muted);font-size:.8rem;margin-top:5px}.place-details{flex:1 1 320px}.place-details p{color:var(--muted);margin:5px 0 12px}.place-description{font-size:.95rem;line-height:1.7}.timeline-block{border-left:2px solid var(--accent);padding-left:15px;margin:14px 0}.timeline-time,.puzzle-timeline strong,.quiz-history strong{color:var(--accent);font-weight:bold}.puzzle-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px}.puzzle-card{margin:0}.puzzle-card h3{text-align:center;font-size:1.05rem}.puzzle-card img{width:100%;height:145px;object-fit:cover;border-radius:6px;margin:10px 0}.puzzle-card p{color:var(--muted);font-size:.88rem}.puzzle-timeline{max-height:150px;overflow:auto;border-left:2px solid var(--accent);padding-left:12px;margin:10px 0}.puzzle-card .control-btn{display:block;margin:12px auto 0}.active-puzzle{text-align:center;margin-top:30px}.active-puzzle h3{margin-bottom:10px}#puzzleBoard{width:min(300px,90vw);height:min(300px,90vw);display:grid;grid-template-columns:repeat(3,1fr);margin:18px auto;border:2px solid var(--accent);background:#111}.tile{background-size:300px 300px;border:1px solid #111;cursor:pointer}.tile.empty{background:#111!important;cursor:default}.quiz-container{margin-top:20px}.quiz-intro{color:var(--muted);border-bottom:1px solid #444;padding-bottom:15px;margin-bottom:20px}.quiz-history{display:grid;gap:7px;margin-top:12px;font-size:.9rem}.quiz-q{border-bottom:1px solid #444;padding-bottom:16px;margin-bottom:18px}.quiz-opt{display:block;background:#303030;border:1px solid transparent;border-radius:5px;padding:9px;margin:8px 0;cursor:pointer}.quiz-opt:hover{border-color:var(--accent)}.quiz-result{text-align:center;padding:35px 20px;min-height:300px;display:flex;flex-direction:column;justify-content:center;align-items:center}.quiz-won{border:2px solid var(--accent);border-radius:12px;background:linear-gradient(135deg,#3a2b08,#242424)}.quiz-lost{border:1px solid var(--border);border-radius:12px}.result-icon{font-size:3.5rem;margin-bottom:10px}.quiz-result h2{font-size:1.8rem;margin-bottom:8px}.result-score{font-size:3rem;font-weight:bold;color:var(--accent);line-height:1.2}.quiz-result p{color:var(--muted);margin-top:10px}.quiz-result p strong{color:var(--accent)}.result-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:24px}.game-intro{color:var(--muted);margin:8px 0 22px}.treasure-container{max-width:900px;margin:auto}.treasure-route{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:0 auto 18px;padding:15px;background:#1d1d1d;border:1px solid var(--accent);border-radius:10px}.route-stop{color:#777;font-weight:bold;padding:7px 10px;border-radius:18px}.route-stop.unlocked{color:#fff;background:#3a321f}.route-stop.current{color:#111;background:var(--accent);box-shadow:0 0 14px #d4af3788}.route-arrow{color:var(--accent)}.treasure-stats{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:18px;padding:12px;background:#242424e8;border:1px solid var(--border);border-radius:8px;color:var(--accent)}.treasure-stats strong{white-space:nowrap}.treasure-card{background:#242424e8;border:1px solid var(--accent);border-radius:12px;padding:25px;box-shadow:0 4px 14px #0008}.treasure-game-over{text-align:center}.treasure-progress{color:var(--accent);font-weight:bold;margin-bottom:12px}.treasure-clue{font-size:1.2rem;margin:18px 0;color:#fff}.treasure-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}.treasure-option{text-align:left;background:#303030;color:#fff;border:1px solid #555;border-radius:6px;padding:12px;cursor:pointer;font:inherit}.treasure-option:hover{border-color:var(--accent);background:#3a321f}.treasure-option:disabled{cursor:default;opacity:.9}.treasure-option.correct{border-color:#55c878;background:#183b25}.treasure-option.wrong{border-color:#e57373;background:#461f1f}.treasure-score{color:var(--accent);font-size:1.35rem;font-weight:bold}.fact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:20px 0}.fact-chip{background:#303030;border-left:3px solid var(--accent);padding:10px}.favorite-btn{margin-left:auto}.favorite-btn.saved{background:var(--accent);color:#111}.culture-panel{background:#f8f3e9;color:#2d241f;border-radius:14px;padding:clamp(18px,4vw,35px);margin-top:5px}.culture-panel-intro{text-align:center;max-width:900px;margin:0 auto 32px}.culture-panel-intro h2{color:#8b4513;font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:8px}.culture-panel-intro p{color:#555}.culture-category{margin:0 0 35px;scroll-margin-top:90px}.culture-category-heading{background:linear-gradient(90deg,#ff9933,#ffd29b);border-left:7px solid #8b4513;border-radius:10px;padding:15px 18px;margin-bottom:18px}.culture-category-heading h3{color:#3b1a08;font-family:Georgia,serif;font-size:1.35rem}.culture-category-heading p{color:#654321;margin-top:3px}.culture-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.culture-card{background:#fff;border:1px solid #eadfd3;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px #00000018;transition:transform .2s,box-shadow .2s}.culture-card:hover{transform:translateY(-4px);box-shadow:0 9px 20px #0000002b}.culture-card-body{padding:15px}.culture-card-body h4{color:#9a3412;font-family:Georgia,serif;font-size:1.1rem;margin-bottom:6px}.culture-region{display:inline-block;background:#e8f5e9;color:#166534;border-radius:15px;padding:3px 9px;font-size:.78rem;font-weight:bold;margin-bottom:8px}.culture-card-body p{color:#555;font-size:.87rem;line-height:1.55}.culture-icon{display:grid;place-items:center;height:72px;background:linear-gradient(135deg,#ff9933,#fff,#138808);font-size:2.25rem}@media(max-width:600px){.culture-panel{padding:15px 10px}.culture-grid{grid-template-columns:1fr}}.faq-item{margin-bottom:15px}.faq-q{color:var(--accent);font-family:Georgia,serif;font-size:1.1rem;font-weight:bold;margin-bottom:6px}footer{text-align:center;padding:22px;background:#090909;color:var(--muted);margin-top:20px}@media(max-width:600px){.tab-btn{padding:12px 13px;font-size:.85rem}.timeline-card{padding:15px}.place-figure,.place-details{flex-basis:100%}.profile-trigger{top:10px;left:10px;padding:6px 10px;font-size:.85rem}.map-trigger{top:10px;left:105px;padding:6px 10px;font-size:.85rem}.top-leaderboard{top:10px;right:10px;width:calc(100% - 150px);font-size:.68rem;padding:7px}.top-leaderboard .leaderboard-link{font-size:.75rem}.leaderboard-toggle{font-size:.75rem}header{padding-top:88px}}
+#culture .culture-page-wrapper{background:#f8f3e9;color:#2d241f;border-radius:14px;overflow:hidden}#culture .culture-page-header{background:linear-gradient(135deg,#ff9933 0%,#fff 50%,#138808 100%);color:#4b210d;text-align:center;padding:clamp(30px,5vw,55px) 20px;border-bottom:5px solid #d97706}#culture .culture-page-header h2{color:#4b210d;font-family:Arial,sans-serif;font-size:clamp(2rem,5vw,2.8rem);margin-bottom:10px}#culture .culture-page-header p{color:#333;font-size:1.05rem;font-weight:500}#culture .culture-page-nav{background:#451c0b;padding:12px;text-align:center;position:sticky;top:0;z-index:4;box-shadow:0 3px 10px #0003}#culture .culture-page-nav a{display:inline-block;color:#fff;text-decoration:none;padding:9px 14px;margin:4px;border-radius:25px;font-size:.85rem;font-weight:bold;transition:.2s}#culture .culture-page-nav a:hover{background:#ff9933;color:#3d1707;transform:translateY(-2px)}#culture .culture-page-intro{text-align:center;max-width:950px;margin:40px auto 50px;padding:0 20px}#culture .culture-page-intro h3{color:#8b4513;font-family:Arial,sans-serif;font-size:clamp(1.5rem,4vw,2rem);margin-bottom:12px}#culture .culture-page-intro p{color:#555;font-size:1rem}#culture .culture-category{margin:0 20px 65px;scroll-margin-top:90px}#culture .culture-category-heading{background:linear-gradient(90deg,#ff9933,#ffd29b);padding:20px 25px;border-left:8px solid #8b4513;border-radius:12px;margin-bottom:25px;box-shadow:0 4px 12px #00000014}#culture .culture-category-heading h3{font-size:clamp(1.35rem,3vw,1.8rem);color:#3b1a08}#culture .culture-category-heading p{color:#654321;margin-top:3px}#culture .culture-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}#culture .culture-card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 6px 20px #0000001a;transition:.25s;border:1px solid #eee}#culture .culture-card:hover{transform:translateY(-6px);box-shadow:0 12px 30px #0000002e}#culture .culture-image{width:100%;height:220px;object-fit:cover;display:block;background:#eee}#culture .card-content{padding:20px}#culture .card-content h4{color:#9a3412;font-family:Georgia,serif;font-size:1.35rem;margin-bottom:5px}#culture .culture-region{display:inline-block;background:#e8f5e9;color:#166534;padding:5px 10px;border-radius:15px;font-size:.8rem;font-weight:bold;margin-bottom:12px}#culture .card-content p{color:#555;font-size:.94rem;line-height:1.7}@media(max-width:600px){#culture .culture-page-nav a{font-size:.75rem;padding:7px 9px;margin:2px}#culture .culture-category{margin-left:10px;margin-right:10px}#culture .culture-grid{grid-template-columns:1fr}#culture .culture-image{height:230px}}#topic-wise-preparation{max-width:1150px;margin:0 auto;color:#222;font-family:Arial,sans-serif}#topic-wise-preparation *{box-sizing:border-box}#topic-wise-preparation .topic-wise-header{background:linear-gradient(135deg,#182848,#4b6cb7);color:#fff;text-align:center;padding:25px 15px;border-radius:14px;margin-bottom:20px}#topic-wise-preparation .topic-wise-header h2{color:#fff;margin-bottom:7px}#topic-wise-preparation .topic-wise-search{background:#fff;border:1px solid #d7dce5;border-radius:10px;padding:15px;margin-bottom:22px}#topic-wise-preparation .topic-wise-search label{display:block;color:#182848;font-weight:bold;margin-bottom:8px}#topic-wise-preparation .topic-wise-search input{width:100%;padding:11px 13px;border:1px solid #bfc7d6;border-radius:7px;background:#fff;color:#222;font:inherit}#topic-wise-preparation .topic-wise-title{color:#182848;font-family:Georgia,serif;margin:25px 0 14px}#topic-wise-preparation .topic-wise-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}#topic-wise-preparation .topic-wise-card,#topic-wise-preparation .topic-wise-exams article{background:#fff;border:1px solid #dfe3ea;border-radius:11px;padding:18px;box-shadow:0 3px 10px #00000012}#topic-wise-preparation .topic-wise-card h3,#topic-wise-preparation .topic-wise-exams h3{color:#2c4f91;margin-bottom:10px;font-size:1.08rem}#topic-wise-preparation .topic-wise-card ul{padding-left:20px}#topic-wise-preparation .topic-wise-card li{margin:5px 0}#topic-wise-preparation .topic-wise-tag{display:inline-block;background:#e9efff;color:#294d91;padding:3px 8px;border-radius:20px;font-size:.78rem;margin-bottom:8px}#topic-wise-preparation .topic-wise-exams{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}#topic-wise-preparation .topic-wise-exams p{color:#555}#topic-wise-preparation .topic-wise-phases{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;background:#182848;color:#fff;padding:18px;border-radius:11px}#topic-wise-preparation .topic-wise-phases span{background:#4b6cb7;padding:8px 12px;border-radius:7px}#topic-wise-preparation .topic-wise-note{text-align:center;color:#555;margin:14px 0}#topic-wise-preparation .topic-wise-no-results{text-align:center;color:#666;padding:20px}#daily-gk{max-width:1000px;margin:0 auto;color:#222}#daily-gk .gk-header{background:linear-gradient(135deg,#173b70,#2875b8);color:#fff;text-align:center;padding:25px 15px;border-radius:15px;margin-bottom:20px}#daily-gk .gk-header h2{color:#fff;margin-bottom:10px}#daily-gk .gk-controls{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:15px}#daily-gk .gk-controls select,#daily-gk .gk-controls input{flex:1;min-width:180px;padding:12px;border:1px solid #ccc;border-radius:8px;font:inherit;background:#fff;color:#222}#daily-gk .gk-count{margin:12px 0;color:var(--muted);font-size:.9rem}#daily-gk .gk-question-card{background:#fff;color:#222;border:1px solid #ddd;border-left:5px solid #2875b8;border-radius:12px;padding:18px;margin-bottom:16px;box-shadow:0 3px 9px #0000000d}#daily-gk .gk-category{color:#2875b8;font-weight:bold;font-size:.82rem}#daily-gk .gk-question{font-size:1.05rem;font-weight:bold;line-height:1.5;margin:12px 0}#daily-gk .gk-answer{background:#eaf7ed;color:#17632b;padding:12px;border-radius:8px;margin-bottom:10px;line-height:1.5}#daily-gk .gk-explanation{background:#f1f5fa;padding:12px;border-radius:8px;line-height:1.6}#daily-gk .gk-no-results{text-align:center;padding:25px;color:var(--muted)}
+#mock-test{max-width:1100px;margin:0 auto;color:#222;font-family:Arial,sans-serif}#mock-test *{box-sizing:border-box}#mock-test .mock-header{background:linear-gradient(135deg,#172554,#1e40af);color:#fff;text-align:center;padding:25px 15px;border-radius:14px;margin-bottom:20px}#mock-test .mock-info{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}#mock-test .mock-info-card,#mock-test .mock-start,#mock-test .mock-question,#mock-test .mock-result{background:#fff;border:1px solid #dfe3ea;border-radius:12px;padding:18px;box-shadow:0 3px 10px #00000014}#mock-test .mock-info-card{text-align:center}#mock-test .mock-info-card strong{display:block;color:#1e40af;font-size:1.5rem}#mock-test .mock-start{text-align:center}#mock-test .mock-start h3,#mock-test .mock-result h3{color:#1e40af;margin-bottom:10px}#mock-test .mock-start-btn,#mock-test .mock-action{border:0;border-radius:7px;background:#1e40af;color:#fff;padding:10px 16px;cursor:pointer;font:inherit;font-weight:bold;margin-top:12px}#mock-test .mock-duration-nav{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:15px}#mock-test .mock-duration-nav button{border:1px solid #1e40af;border-radius:7px;background:#eff6ff;color:#1e40af;padding:9px 14px;cursor:pointer;font:inherit;font-weight:bold}#mock-test .mock-duration-nav button.active,#mock-test .mock-duration-nav button:hover{background:#1e40af;color:#fff}#mock-test .mock-action.secondary{background:#64748b}#mock-test .mock-exam[hidden],#mock-test .mock-result[hidden],#mock-test .mock-start[hidden]{display:none}#mock-test .mock-top{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#eff6ff;border-radius:9px;padding:12px;margin-bottom:15px}#mock-test .mock-timer{background:#172554;color:#fff;border-radius:6px;padding:7px 12px;font-weight:bold;white-space:nowrap}#mock-test .mock-timer.danger{background:#b91c1c}#mock-test .mock-progress{height:7px;background:#dbeafe;border-radius:8px;overflow:hidden;margin-bottom:15px}#mock-test .mock-progress span{display:block;height:100%;width:0;background:#2563eb;transition:width .2s}#mock-test .mock-layout{display:grid;grid-template-columns:210px 1fr;gap:15px}#mock-test .mock-palette{background:#f8fafc;border:1px solid #dfe3ea;border-radius:10px;padding:14px;height:max-content}#mock-test .mock-palette-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:10px}#mock-test .mock-palette button{border:1px solid #cbd5e1;background:#fff;border-radius:4px;padding:7px;cursor:pointer}#mock-test .mock-palette button.current{background:#2563eb;color:#fff}#mock-test .mock-palette button.answered{background:#16a34a;color:#fff}#mock-test .mock-question h3{color:#1e40af;margin-bottom:12px}#mock-test .mock-option{display:block;border:1px solid #cbd5e1;border-radius:7px;padding:11px;margin:8px 0;cursor:pointer}#mock-test .mock-option.selected{background:#dbeafe;border-color:#2563eb}#mock-test .mock-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between;margin-top:18px}#mock-test .mock-score{font-size:2.3rem;color:#1e40af;font-weight:bold}#mock-test .mock-review{text-align:left;margin-top:18px}#mock-test .mock-review article{background:#f8fafc;border-left:4px solid #2563eb;padding:12px;margin:9px 0;border-radius:6px}@media(max-width:700px){#mock-test .mock-info{grid-template-columns:repeat(2,1fr)}#mock-test .mock-layout{grid-template-columns:1fr}#mock-test .mock-top{align-items:flex-start;flex-direction:column}}
+#pyqs{max-width:1200px;margin:0 auto}#pyqs .pyq-vault{color:#1e293b;background:#f8fafc;border:1px solid #dbe3ef;border-radius:18px;padding:clamp(15px,3vw,28px);box-shadow:0 5px 18px #0002}#pyqs .pyq-vault-header{display:flex;justify-content:space-between;align-items:center;gap:18px;background:linear-gradient(135deg,#172554,#1d4ed8);color:#fff;border-radius:14px;padding:24px;margin-bottom:16px}#pyqs .pyq-vault-header h2{color:#fff;font-family:Arial,sans-serif;margin:6px 0;font-size:clamp(1.4rem,4vw,2.2rem)}#pyqs .pyq-vault-header p{color:#dbeafe;max-width:700px;font-size:.9rem}#pyqs .pyq-badge{color:#bfdbfe;font-size:.72rem;font-weight:bold;letter-spacing:1px}#pyqs .pyq-stat{min-width:125px;text-align:center;background:#ffffff1c;border:1px solid #ffffff3d;border-radius:12px;padding:12px}.pyq-stat strong{display:block;font-size:2rem}.pyq-stat span{font-size:.75rem;color:#dbeafe}.pyq-launch-row,.pyq-mode-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:14px 0}.pyq-launch-row button,.pyq-mode-row button,.pyq-pagination button{border:1px solid #2563eb;border-radius:7px;background:#1d4ed8;color:#fff;padding:9px 12px;cursor:pointer;font:inherit;font-size:.82rem}.pyq-launch-row button:last-child{background:#047857;border-color:#047857}.pyq-launch-row button:hover,.pyq-mode-row button:hover,.pyq-pagination button:hover{filter:brightness(1.12)}.pyq-toolbar{display:grid;grid-template-columns:auto minmax(180px,1fr) minmax(220px,2fr) minmax(150px,1fr);gap:9px;align-items:center;background:#fff;border:1px solid #dbe3ef;border-radius:10px;padding:12px;font-size:.85rem;font-weight:bold}.pyq-toolbar input,.pyq-toolbar select{min-width:0;background:#fff;color:#1e293b;border:1px solid #cbd5e1;border-radius:6px;padding:9px;font:inherit}.pyq-mode-row{justify-content:space-between}.pyq-mode-row button{background:#e2e8f0;color:#334155;border-color:#cbd5e1}.pyq-mode-row button.active{background:#2563eb;color:#fff;border-color:#2563eb}.pyq-mode-row span{color:#475569;font-size:.82rem;font-weight:bold}.pyq-palette{display:grid;grid-template-columns:repeat(auto-fill,minmax(31px,1fr));gap:5px;background:#fff;border:1px solid #dbe3ef;border-radius:10px;padding:10px;margin-bottom:14px;max-height:150px;overflow:auto}.pyq-palette button{border:0;border-radius:5px;background:#e2e8f0;color:#334155;padding:7px 2px;cursor:pointer;font-size:.72rem}.pyq-palette button.answered{background:#16a34a;color:#fff}.pyq-card{background:#fff;border:1px solid #dbe3ef;border-left:4px solid #2563eb;border-radius:10px;padding:17px;margin:12px 0;box-shadow:0 2px 7px #0000000c}.pyq-card-head{display:flex;justify-content:space-between;gap:8px;color:#2563eb;font-size:.78rem;font-weight:bold}.pyq-card h3{color:#1e293b;font-family:Arial,sans-serif;font-size:1rem;margin:12px 0;white-space:pre-line}.pyq-option{display:block;width:100%;text-align:left;background:#f8fafc;color:#334155;border:1px solid #cbd5e1;border-radius:6px;padding:10px;margin:7px 0;cursor:pointer;font:inherit;font-size:.86rem}.pyq-option:hover{border-color:#2563eb}.pyq-option.selected{background:#dbeafe;border-color:#2563eb}.pyq-option.correct{background:#dcfce7;border-color:#16a34a;color:#166534;font-weight:bold}.pyq-explanation{background:#eff6ff;border-radius:7px;padding:11px;margin-top:12px;color:#334155;font-size:.83rem;white-space:pre-line}.pyq-pagination{display:flex;justify-content:space-between;align-items:center;margin-top:18px;color:#475569;font-size:.84rem}.pyq-pagination button:disabled{opacity:.45;cursor:default}@media(max-width:700px){#pyqs .pyq-vault-header{display:block}.pyq-stat{margin-top:15px}.pyq-toolbar{grid-template-columns:1fr}.pyq-mode-row{align-items:stretch}.pyq-mode-row span{width:100%}}
+  </style>
+</head>
+
+<body>
+
+  <section class="welcome-screen" id="welcomeScreen" aria-labelledby="welcomeTitle">
+    <div class="bubble-field" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span>
+    </div>
+    <div class="welcome-content">
+      <div class="welcome-emblem" aria-hidden="true">🏛️</div>
+      <p class="welcome-kicker">🏛️ CHRONICLES OF BHARAT</p>
+      <h1 id="welcomeTitle">⚔️ CHRONICLES OF BHARAT:<br><span>THE HERITAGE QUEST</span></h1>
+      <h2>Journey Through India's Glorious History</h2>
+      <p class="welcome-promise">Explore <b>•</b> Discover <b>•</b> Solve <b>•</b> Play <b>•</b> Learn</p>
+      <button class="start-quest-btn" id="startQuest" type="button">Start the Quest <span aria-hidden="true">➜</span></button>
+    </div>
+  </section>
+
+  <section class="signup-screen" id="signupScreen" hidden aria-labelledby="signupTitle">
+    <div class="signup-card">
+      <div class="signup-icon" aria-hidden="true">🧭</div>
+      <p class="signup-kicker">BEGIN YOUR HERITAGE JOURNEY</p>
+      <h2 id="signupTitle">Create Your Explorer Account</h2>
+      <p class="signup-intro">Sign up to save your progress and join the leaderboard.</p>
+      <form id="signupForm" class="signup-form">
+        <label for="signupUsername">Username</label>
+        <input id="signupUsername" type="text" maxlength="30" placeholder="Enter your username" autocomplete="username" required>
+        <label for="signupEmail">Email</label>
+        <input id="signupEmail" type="email" placeholder="Enter your email" autocomplete="email" required>
+        <label for="signupPassword">Password</label>
+        <input id="signupPassword" type="password" minlength="6" placeholder="Create a password" autocomplete="new-password" required>
+        <label for="signupConfirmPassword">Confirm password</label>
+        <input id="signupConfirmPassword" type="password" minlength="6" placeholder="Confirm your password" autocomplete="new-password" required>
+        <p class="signup-error" id="signupError" role="alert" hidden></p>
+        <button class="start-quest-btn signup-btn" type="submit">Sign Up <span aria-hidden="true">➜</span></button>
+        <button class="account-link" id="showLogin" type="button">Already have an account? Log in</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="login-screen" id="loginScreen" hidden aria-labelledby="loginTitle">
+    <div class="heart-field" aria-hidden="true">
+      <span>♥</span><span>♡</span><span>♥</span><span>♡</span><span>♥</span>
+      <span>♡</span><span>♥</span><span>♡</span><span>♥</span><span>♡</span>
+    </div>
+    <div class="login-card">
+      <div class="signup-icon" aria-hidden="true">💗</div>
+      <p class="signup-kicker">WELCOME BACK, EXPLORER</p>
+      <h2 id="loginTitle">Log In to Your Account</h2>
+      <p class="signup-intro">Continue your heritage journey.</p>
+      <form id="loginForm" class="signup-form">
+        <label for="loginIdentity">Email or username</label>
+        <input id="loginIdentity" type="text" placeholder="Enter your email or username" autocomplete="username" required>
+        <label for="loginPassword">Password</label>
+        <input id="loginPassword" type="password" placeholder="Enter your password" autocomplete="current-password" required>
+        <p class="signup-error" id="loginError" role="alert" hidden></p>
+        <button class="start-quest-btn signup-btn" type="submit">Log In <span aria-hidden="true">➜</span></button>
+        <button class="account-link" id="showSignup" type="button">Need an account? Sign up</button>
+      </form>
+    </div>
+  </section>
+
+  <header>
+    <button class="profile-trigger" id="profileTrigger" aria-controls="profilePanel" aria-expanded="false">👤 Profile</button>
+    <button class="map-trigger" id="mapTrigger" type="button" aria-controls="heritageMapPanel" aria-expanded="false">🗺️ Heritage Map</button>
+    <aside class="top-leaderboard" aria-label="Live leaderboard">
+      <button class="leaderboard-toggle" id="leaderboardToggle" type="button" aria-controls="leaderboardDetails" aria-expanded="false">
+        🏆 Leaderboard <span class="toggle-arrow" aria-hidden="true">⌄</span>
+      </button>
+      <div id="leaderboardDetails" hidden>
+        <div class="live-player-count"><span class="live-dot" aria-hidden="true"></span><strong id="activePlayerCount">1,284</strong> playing now</div>
+        <div class="top-player"><span>🏆 Highest player</span><strong id="topPlayerName">Heritage Explorer</strong><b id="topPlayerScore">980 pts</b></div>
+        <button class="leaderboard-link" id="openLeaderboard" type="button">View full leaderboard</button>
+      </div>
+    </aside>
+    <h1 data-i18n="title">Chronicles of Bharat</h1>
+    <p data-i18n="subtitle">Explore India's historic landmarks through timelines, puzzles, narration, and quizzes.</p>
+    <label class="site-language" for="siteLanguage">🌐 <span data-i18n="language">Language</span>:
+      <select id="siteLanguage" aria-label="Choose website language">
+        <option value="en">English</option>
+        <option value="te">తెలుగు</option>
+      </select>
+    </label>
+  </header>
+
+  <nav class="main-nav" aria-label="Main navigation">
+    <button class="tab-btn active" data-tab="history">History</button>
+    <button class="tab-btn" data-tab="puzzle">Image Puzzles</button>
+    <button class="tab-btn" data-tab="quiz">Quizzes</button>
+    <button class="tab-btn" data-tab="treasure">Treasure Hunt</button>
+    <button class="tab-btn" data-tab="faq">Heritage FAQ</button>
+    <button class="tab-btn" data-tab="culture">Culture &amp; Heritage</button>
+    <button class="tab-btn" data-tab="gk">🇮🇳 GK Preparation</button>
+    <button class="tab-btn" data-tab="topicWise">📚 Topic-wise Preparation</button>
+    <button class="tab-btn" data-tab="mockTest">📝 Mock Test</button>
+    <button class="tab-btn" data-tab="pyqs">📚 PYQs</button>
+  </nav>
+
+  <main>
+    <section id="history" class="tab-content active">
+      <div class="search-row">
+        <label for="historySearch" data-i18n="searchPlaces">Search historical places</label>
+        <input id="historySearch" type="search" placeholder="Search by place or location" data-i18n-placeholder="searchPlaceholder">
+      </div>
+
+      <div class="speech-controls">
+        <label for="languageSelect"><strong>🎙️ Narration language:</strong></label>
+        <select id="languageSelect">
+          <option value="en-IN">English (India)</option>
+          <option value="hi-IN">Hindi (हिंदी)</option>
+          <option value="ta-IN">Tamil (தமிழ்)</option>
+          <option value="te-IN">Telugu (తెలుగు)</option>
+          <option value="bn-IN">Bengali (বাংলা)</option>
+          <option value="mr-IN">Marathi (मराठी)</option>
+        </select>
+        <button class="control-btn" id="stopSpeech">⏹ Stop Speech</button>
+      </div>
+
+      <section class="heritage-map-section map-page-screen" id="heritageMapPanel" aria-labelledby="mapHeading" hidden>
+        <div class="map-heading-row">
+          <div>
+            <button class="back-btn map-back-btn" id="closeHeritageMap" type="button">← Back to home</button>
+            <h2 id="mapHeading">🗺️ Explore India’s Heritage Map</h2>
+            <p>Select a famous historical place to view its location on Google Maps.</p>
+          </div>
+          <a class="control-btn map-open-link" id="openGoogleMap" href="https://www.google.com/maps/search/Taj+Mahal+Agra" target="_blank" rel="noopener">Open in Google Maps ↗</a>
+        </div>
+
+        <div class="map-place-list" id="mapPlaceList" role="list" aria-label="Historical places on the map"></div>
+
+        <div class="map-layout">
+          <div class="map-frame-wrap">
+            <iframe id="heritageMap" title="Google Maps showing the selected historical place" src="https://www.google.com/maps?q=Taj+Mahal,+Agra&output=embed" loading="lazy" allowfullscreen></iframe>
+          </div>
+
+          <div class="map-place-info" id="mapPlaceInfo" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <div id="historyContainer"></div>
+    </section>
+
+    <section id="puzzle" class="tab-content">
+      <h2 data-i18n="puzzleHeading">Historical Monument Sliding Puzzles</h2>
+
+      <div class="search-row">
+        <label for="puzzleSearch" data-i18n="searchPuzzles">Search puzzles</label>
+        <input id="puzzleSearch" type="search" placeholder="Search puzzles" data-i18n-placeholder="searchPuzzlesPlaceholder">
+      </div>
+
+      <div id="puzzleSelectGrid" class="puzzle-grid"></div>
+
+      <div id="activePuzzleArea" class="active-puzzle" hidden>
+        <h3 id="puzzleTitle"></h3>
+        <div id="puzzleBoard" aria-label="Sliding puzzle"></div>
+        <button class="control-btn" id="restartPuzzle">Shuffle &amp; Restart</button>
+      </div>
+    </section>
+
+    <section id="quiz" class="tab-content">
+      <h2 data-i18n="quizHeading">Heritage Knowledge Quiz</h2>
+      <label for="quizSelect" data-i18n="selectDestination">Select a destination:</label>
+      <select id="quizSelect"></select>
+      <div id="quizContainer" class="quiz-container"></div>
+    </section>
+
+    <section id="treasure" class="tab-content">
+      <h2 data-i18n="treasureHeading">Heritage Treasure Hunt</h2>
+      <p class="game-intro" data-i18n="treasureIntro">Follow the clues, identify the monument, and collect heritage points.</p>
+      <div id="treasureContainer" class="treasure-container"></div>
+    </section>
+
+    <section id="culture" class="tab-content">
+      <div class="culture-page-wrapper">
+        <header class="culture-page-header">
+          <h2>🇮🇳 Indian Culture &amp; Heritage</h2>
+          <p>Explore the beautiful traditions, arts, festivals, clothing, crafts, dances and cuisines of India.</p>
+        </header>
+        <nav class="culture-page-nav" aria-label="Culture and heritage categories">
+          <a href="#culture-classical">💃 Classical</a><a href="#culture-folk">🕺 Folk</a><a href="#culture-festivals">🪔 Festivals</a><a href="#culture-arts">🎨 Arts</a><a href="#culture-crafts">🧵 Handicrafts</a><a href="#culture-clothing">👗 Clothing</a><a href="#culture-food">🍛 Cuisines</a>
+        </nav>
+        <div class="culture-page-intro"><h3>🌏 Discover the Diversity of India</h3><p>India has one of the world's richest and most diverse cultural traditions. Explore different regional dances, festivals, traditional arts, handicrafts, clothing and cuisines.</p></div>
+
+        <section class="culture-category" id="culture-classical"><div class="culture-category-heading"><h3>💃 1. Classical Dances</h3><p>Classical dance traditions representing different regions and artistic styles of India.</p></div><div class="culture-grid">
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bharatanatyam%20dance%20performance%20by%20Guru%20Saroja%20Vaidyanathan%27%20disciples%20at%20Youth%20Festival%202012%20IMG%203165%2001.jpg" alt="Bharatanatyam dance"><div class="card-content"><h4>Bharatanatyam</h4><span class="culture-region">📍 Tamil Nadu</span><p>Classical dance known for precise movements, hand gestures and expressive storytelling.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Kathak%20Tatkar.jpg" alt="Kathak dance"><div class="card-content"><h4>Kathak</h4><span class="culture-region">📍 North India</span><p>Combines rhythmic footwork, spins, gestures and storytelling.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://www.utsavpedia.com/wp-content/uploads/2013/07/Kathakali-sajna103.jpg" alt="Kathakali dance"><div class="card-content"><h4>Kathakali</h4><span class="culture-region">📍 Kerala</span><p>Dance-drama famous for elaborate costumes, makeup and dramatic expressions.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Kuchipudi%20artists%20performing%20the%20traditional%20dance.jpg" alt="Kuchipudi dance"><div class="card-content"><h4>Kuchipudi</h4><span class="culture-region">📍 Andhra Pradesh</span><p>Classical dance combining graceful movements, expressions and dramatic storytelling.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Odissi%20dancer%20Vandana%20Supriya%20Kasaravalli.jpg" alt="Odissi dance"><div class="card-content"><h4>Odissi</h4><span class="culture-region">📍 Odisha</span><p>Known for graceful poses, sculpturesque movements and devotional themes.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://c8.alamy.com/comp/HBY9RR/manipuri-dancer-performing-manipur-rass-dance-on-stage-ajmerrajasthan-HBY9RR.jpg" alt="Manipuri dance"><div class="card-content"><h4>Manipuri</h4><span class="culture-region">📍 Manipur</span><p>Characterized by gentle movements and strong connections with Vaishnava traditions.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/A%20Mohiniyattam%20Artist%20form%20Kerala%20%28HSS%29%20%28390%29.jpg" alt="Mohiniyattam dance"><div class="card-content"><h4>Mohiniyattam</h4><span class="culture-region">📍 Kerala</span><p>Graceful classical dance traditionally associated with feminine expression.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/A%20Sattriya%20dancer%20performing%20the%20dance%20form%20in%20Assam%2C%20India.jpg" alt="Sattriya dance"><div class="card-content"><h4>Sattriya</h4><span class="culture-region">📍 Assam</span><p>Classical dance originating from the Vaishnavite monastic tradition of Assam.</p></div></article>
+        </div></section>
+
+        <section class="culture-category" id="culture-folk"><div class="culture-category-heading"><h3>🕺 2. Folk Dances</h3><p>Traditional folk dances connected with regional communities, celebrations and traditions.</p></div><div class="culture-grid">
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bhangra%20dance.jpg" alt="Bhangra dance"><div class="card-content"><h4>Bhangra</h4><span class="culture-region">📍 Punjab</span><p>Energetic Punjabi folk dance traditionally associated with harvest celebrations.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://i.pinimg.com/originals/b3/7a/22/b37a22e60825b4f88e1645c4a959bd0e.jpg" alt="Garba dance"><div class="card-content"><h4>Garba</h4><span class="culture-region">📍 Gujarat</span><p>Circular group dance commonly performed during Navratri celebrations.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ghoomar%20dancers%20%28Rajasthan%2C%20India%2C%202023%29.jpg" alt="Ghoomar dance"><div class="card-content"><h4>Ghoomar</h4><span class="culture-region">📍 Rajasthan</span><p>Traditional Rajasthani dance recognized for graceful circular movements and colorful attire.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bihu%20Dancers%20from%20Assam%2001.jpg" alt="Bihu dance"><div class="card-content"><h4>Bihu</h4><span class="culture-region">📍 Assam</span><p>Traditional Assamese dance associated with Bihu celebrations and agricultural traditions.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Lavani%20Dance.jpg" alt="Lavani dance"><div class="card-content"><h4>Lavani</h4><span class="culture-region">📍 Maharashtra</span><p>Traditional Maharashtrian performance combining rhythmic dance and expressive singing.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/%22Yakshagana%22.jpg" alt="Yakshagana"><div class="card-content"><h4>Yakshagana</h4><span class="culture-region">📍 Karnataka</span><p>Traditional theatre and dance form known for elaborate costumes, music and storytelling.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cheraw%20dance.jpg" alt="Cheraw bamboo dance"><div class="card-content"><h4>Cheraw</h4><span class="culture-region">📍 Mizoram</span><p>Traditional bamboo dance performed using coordinated rhythmic movements.</p></div></article>
+        </div></section>
+
+        <section class="culture-category" id="culture-festivals"><div class="culture-category-heading"><h3>🪔 3. Festivals</h3><p>Major festivals celebrated across India's diverse communities.</p></div><div class="culture-grid">
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Diwali%20celebration.jpg" alt="Diwali"><div class="card-content"><h4>Diwali</h4><span class="culture-region">📍 Pan-India</span><p>Festival of lights celebrated with lamps, decorations, family gatherings and traditional customs.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Holi%20Festival%20India.jpg" alt="Holi"><div class="card-content"><h4>Holi</h4><span class="culture-region">📍 Pan-India</span><p>Festival associated with colors, springtime celebrations and community gatherings.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://tse4.mm.bing.net/th/id/OIP.nXDkm9o_Kdx-Hz9diG4kYQHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Dussehra"><div class="card-content"><h4>Dussehra</h4><span class="culture-region">📍 Pan-India</span><p>Festival marking different regional traditions associated with the victory of good over evil.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://png.pngtree.com/background/20250103/original/pngtree-happy-pongal-indian-religious-festival-celebration-background-design-picture-image_15898908.jpg" alt="Pongal"><div class="card-content"><h4>Pongal</h4><span class="culture-region">📍 Tamil Nadu</span><p>Harvest festival celebrated with traditional foods, decorations and cultural activities.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Onam%20festival.jpg" alt="Onam"><div class="card-content"><h4>Onam</h4><span class="culture-region">📍 Kerala</span><p>Major Kerala festival associated with harvest traditions, feasts, flowers and cultural performances.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://static.toiimg.com/photo/64601224/delhi.jpg?width=748&resize=4" alt="Eid celebration"><div class="card-content"><h4>Eid</h4><span class="culture-region">📍 Pan-India</span><p>Islamic festivals marked by prayer, family gatherings, charity and traditional food.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://tse3.mm.bing.net/th/id/OIP.Jds2itUPNh8Zq2yEQK0i_wHaE9?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Christmas in India"><div class="card-content"><h4>Christmas</h4><span class="culture-region">📍 Pan-India</span><p>Christian festival celebrated through worship, decorations, family gatherings and community traditions.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bihu%20Dance%20%2C%20Festival%20of%20India.jpg" alt="Bihu festival"><div class="card-content"><h4>Bihu</h4><span class="culture-region">📍 Assam</span><p>Group of Assamese festivals closely connected with agricultural seasons and community traditions.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://images.indianexpress.com/2025/06/durga-puja_20250619090355.jpg" alt="Durga Puja"><div class="card-content"><h4>Durga Puja</h4><span class="culture-region">📍 West Bengal</span><p>Major festival featuring artistic Durga idols, rituals, cultural events and community celebrations.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://images.herzindagi.info/her-zindagi-english/images/2026/09/14/template/image/Happy-Ganesh-Chaturthi-2026-1789324458630.webp" alt="Ganesh Chaturthi"><div class="card-content"><h4>Ganesh Chaturthi</h4><span class="culture-region">📍 Maharashtra &amp; other regions</span><p>Festival celebrating Ganesha through worship, decorations, music and community events.</p></div></article>
+        </div></section>
+
+        <section class="culture-category" id="culture-arts"><div class="culture-category-heading"><h3>🎨 4. Traditional Arts</h3><p>Traditional painting and artistic traditions of India.</p></div><div class="culture-grid">
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Madhubani%20painting.jpg" alt="Madhubani painting"><div class="card-content"><h4>Madhubani</h4><span class="culture-region">📍 Bihar</span><p>Folk painting traditionally associated with Mithila, using distinctive patterns and vibrant imagery.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Warli%20painting.jpg" alt="Warli painting"><div class="card-content"><h4>Warli</h4><span class="culture-region">📍 Maharashtra</span><p>Tribal painting style known for simple geometric human and nature figures.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://www.exoticindiaart.com/images/products/original/paintings-2019/ddh483.webp" alt="Pattachitra painting"><div class="card-content"><h4>Pattachitra</h4><span class="culture-region">📍 Odisha / West Bengal</span><p>Traditional painting on cloth or prepared surfaces featuring detailed decorative imagery.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Kalamkari.jpg" alt="Kalamkari art"><div class="card-content"><h4>Kalamkari</h4><span class="culture-region">📍 Andhra Pradesh / Telangana</span><p>Textile art involving hand-drawn or block-printed traditional designs.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://i.pinimg.com/736x/31/22/24/31222471c8a7f470d4bc662afdf5f64f.jpg" alt="Gond art"><div class="card-content"><h4>Gond Art</h4><span class="culture-region">📍 Central India</span><p>Indigenous art traditionally featuring animals, nature and patterned forms.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Tanjore%20painting.jpg" alt="Tanjore painting"><div class="card-content"><h4>Tanjore Painting</h4><span class="culture-region">📍 Tamil Nadu</span><p>Decorative paintings recognized for rich ornamentation and raised or gilded elements.</p></div></article>
+        </div></section>
+
+        <section class="culture-category" id="culture-crafts"><div class="culture-category-heading"><h3>🧵 5. Handicrafts</h3><p>Traditional crafts created by skilled Indian artisans.</p></div><div class="culture-grid">
+          <article class="culture-card"><img class="culture-image" src="https://tse3.mm.bing.net/th/id/OIP.H8UJEbgxQKP4AowsmibjLwHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Channapatna toys"><div class="card-content"><h4>Channapatna Toys</h4><span class="culture-region">📍 Karnataka</span><p>Traditional wooden toys known for colorful designs and craftsmanship.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Kondapalli%20toys.jpg" alt="Kondapalli toys"><div class="card-content"><h4>Kondapalli Toys</h4><span class="culture-region">📍 Andhra Pradesh</span><p>Lightweight wooden toys traditionally made by artisans around Kondapalli.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://images.squarespace-cdn.com/content/v1/61cc66f9e8f1cb7928c32c66/037439f8-3d74-45d8-b71d-e7137f6cb20d/dhokra%2Bart%2B2.jpeg" alt="Dhokra craft"><div class="card-content"><h4>Dhokra</h4><span class="culture-region">📍 Central / Eastern India</span><p>Traditional metal craft made using the lost-wax casting technique.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://i.pinimg.com/736x/37/ed/3b/37ed3b1d8a1dcb6bd85839ae7bcff142.jpg" alt="Bamboo crafts"><div class="card-content"><h4>Bamboo Crafts</h4><span class="culture-region">📍 Northeast India</span><p>Bamboo is used to create baskets, furniture, decorative objects and everyday products.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://static.vecteezy.com/system/resources/thumbnails/041/898/285/small_2x/ai-generated-a-potter-s-wheel-with-clay-pots-waiting-for-the-potter-s-skilled-hands-generative-ai-photo.jpeg" alt="Indian pottery"><div class="card-content"><h4>Pottery</h4><span class="culture-region">📍 Pan-India</span><p>Traditional ceramic craft used for household, decorative and cultural purposes.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://images.stockcake.com/public/5/e/b/5eba99f3-c5c6-4de2-ae5a-baa728d93161_large/artisan-textile-craft-stockcake.jpg" alt="Indian textile crafts"><div class="card-content"><h4>Textile Crafts</h4><span class="culture-region">📍 Pan-India</span><p>Includes weaving, embroidery, printing and other regional textile traditions.</p></div></article>
+        </div></section>
+
+        <section class="culture-category" id="culture-clothing"><div class="culture-category-heading"><h3>👗 6. Traditional Clothing</h3><p>Traditional garments representing India's regional diversity.</p></div><div class="culture-grid">
+          <article class="culture-card"><img class="culture-image" src="https://tse3.mm.bing.net/th/id/OIP.QQJYQasjQnl_QeDChcnxkQHaNK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Indian saree"><div class="card-content"><h4>Saree</h4><span class="culture-region">📍 Pan-India</span><p>Draped garment with many regional weaving, embroidery and draping traditions.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://www.utsavpedia.com/wp-content/uploads/2013/07/dupion-silk-dhoti-in-light-beige-720x1042.jpg" alt="Indian dhoti"><div class="card-content"><h4>Dhoti</h4><span class="culture-region">📍 Various regions</span><p>Traditional wrapped garment worn in several parts of India.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Indian%20kurta.jpg" alt="Indian kurta"><div class="card-content"><h4>Kurta</h4><span class="culture-region">📍 Pan-India</span><p>Long tunic-style garment commonly worn in different Indian communities.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sherwani.jpg" alt="Indian sherwani"><div class="card-content"><h4>Sherwani</h4><span class="culture-region">📍 North India</span><p>Formal long coat-style garment often worn for ceremonies and celebrations.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Kerala%20mundu.jpg" alt="Kerala mundu"><div class="card-content"><h4>Mundu</h4><span class="culture-region">📍 Kerala</span><p>Traditional wrapped garment commonly worn in Kerala.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Mekhela%20Chador.jpg" alt="Mekhela Chador"><div class="card-content"><h4>Mekhela Chador</h4><span class="culture-region">📍 Assam</span><p>Traditional two-piece women's attire of Assam.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Girl%20in%20Kashmiri%20Folk%20Dress-%20Pheran.jpg" alt="Kashmiri Phiran"><div class="card-content"><h4>Phiran</h4><span class="culture-region">📍 Kashmir</span><p>Traditional loose garment associated with Kashmiri clothing traditions.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Indian%20Lehenga.jpg" alt="Indian lehenga"><div class="card-content"><h4>Lehenga</h4><span class="culture-region">📍 Various regions</span><p>Skirt-based traditional outfit commonly worn during celebrations and ceremonies.</p></div></article>
+        </div></section>
+
+        <section class="culture-category" id="culture-food"><div class="culture-category-heading"><h3>🍛 7. Indian Cuisines</h3><p>Explore diverse food traditions from different regions of India.</p></div><div class="culture-grid">
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/South%20Indian%20food.jpg" alt="South Indian food"><div class="card-content"><h4>South Indian</h4><span class="culture-region">📍 South India</span><p>Includes dishes such as dosa, idli, sambar and regional rice preparations.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/North%20Indian%20food.jpg" alt="North Indian food"><div class="card-content"><h4>North Indian</h4><span class="culture-region">📍 North India</span><p>Includes diverse breads, curries, rice dishes and regional preparations.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bengali%20food.jpg" alt="Bengali food"><div class="card-content"><h4>Bengali</h4><span class="culture-region">📍 West Bengal</span><p>Known for rice, fish preparations, sweets and distinctive spice combinations.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Punjabi%20food.jpg" alt="Punjabi food"><div class="card-content"><h4>Punjabi</h4><span class="culture-region">📍 Punjab</span><p>Includes dishes such as sarson-based preparations, breads and various legumes.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Rajasthani%20food.jpg" alt="Rajasthani food"><div class="card-content"><h4>Rajasthani</h4><span class="culture-region">📍 Rajasthan</span><p>Known for dishes adapted to the region's traditional ingredients and climate.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Gujarati%20food.jpg" alt="Gujarati food"><div class="card-content"><h4>Gujarati</h4><span class="culture-region">📍 Gujarat</span><p>Includes a wide range of vegetarian dishes, snacks and sweets.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Kashmiri%20food.jpg" alt="Kashmiri food"><div class="card-content"><h4>Kashmiri</h4><span class="culture-region">📍 Kashmir</span><p>Includes distinctive meat, rice and vegetarian preparations influenced by Kashmiri traditions.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Hyderabadi%20biryani.jpg" alt="Hyderabadi food"><div class="card-content"><h4>Hyderabadi</h4><span class="culture-region">📍 Telangana</span><p>Famous for dishes such as biryani and a mixture of regional culinary influences.</p></div></article>
+          <article class="culture-card"><img class="culture-image" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Goan%20food.jpg" alt="Goan food"><div class="card-content"><h4>Goan</h4><span class="culture-region">📍 Goa</span><p>Coastal cuisine featuring seafood and distinctive regional flavors.</p></div></article>
+        </div></section>
+      </div>
+    </section>
+
+    <section id="gk" class="tab-content">
+      <div id="daily-gk">
+        <div class="gk-header">
+          <h2>🇮🇳 GK Preparation</h2>
+          <p>150 Questions with Answers &amp; Explanations</p>
+          <p>Learn • Revise • Explore</p>
+        </div>
+        <div class="gk-controls">
+          <select id="gkSubject" aria-label="Choose GK subject">
+            <option value="All">All Subjects</option>
+            <option value="History">Indian History</option>
+            <option value="Geography">Geography</option>
+            <option value="Polity">Indian Polity</option>
+            <option value="Culture">Art &amp; Culture</option>
+            <option value="Science">Science</option>
+            <option value="General GK">General GK</option>
+          </select>
+          <input id="gkSearch" type="search" placeholder="Search questions or answers..." aria-label="Search GK questions">
+        </div>
+        <div id="gkCount" class="gk-count"></div>
+        <div id="gkQuestionList"></div>
+      </div>
+    </section>
+
+    <section id="topicWise" class="tab-content">
+      <div id="topic-wise-preparation">
+        <div class="topic-wise-header">
+          <h2>🇮🇳 UPSC Civil Services Examination</h2>
+          <p>Complete Topic-Wise Preparation Dashboard</p>
+        </div>
+
+        <div class="topic-wise-search">
+          <label for="topicWiseSearch">🔍 Search UPSC topic, subject or keyword</label>
+          <input id="topicWiseSearch" type="search" placeholder="Search topics, subjects or keywords...">
+        </div>
+
+        <h2 class="topic-wise-title">🎯 Prelims Preparation</h2>
+        <div class="topic-wise-grid">
+          <article class="topic-wise-card">
+            <span class="topic-wise-tag">GS Paper I</span>
+            <h3>General Studies</h3>
+            <ul><li>Indian History</li><li>Indian Polity</li><li>Geography</li><li>Indian Economy</li><li>Environment &amp; Ecology</li><li>Science &amp; Technology</li><li>Current Affairs</li></ul>
+          </article>
+          <article class="topic-wise-card">
+            <span class="topic-wise-tag">CSAT</span>
+            <h3>CSAT Preparation</h3>
+            <ul><li>Reading Comprehension</li><li>Basic Numeracy</li><li>Percentages</li><li>Ratio &amp; Proportion</li><li>Averages</li><li>Data Interpretation</li><li>Logical Reasoning</li></ul>
+          </article>
+        </div>
+
+        <h2 class="topic-wise-title">📚 Core UPSC Subjects</h2>
+        <div class="topic-wise-grid">
+          <article class="topic-wise-card"><h3>1. 🏛️ Indian Polity &amp; Constitution</h3><ul><li>Historical Background and Making of the Constitution</li><li>Preamble and Salient Features</li><li>Fundamental Rights, Duties and Directive Principles</li><li>President, Prime Minister and Parliament</li><li>Supreme Court, High Courts and Judicial Review</li><li>Centre-State Relations and Emergency Provisions</li><li>Constitutional Bodies, Elections and Amendments</li><li>Panchayati Raj, Municipalities and Governance</li></ul></article>
+          <article class="topic-wise-card"><h3>2. 🏺 Ancient &amp; Medieval History</h3><ul><li>Indus Valley Civilization and Vedic Age</li><li>Buddhism, Jainism and Mahajanapadas</li><li>Mauryan and Gupta Empires</li><li>Sangam Age, Art and Architecture</li><li>Delhi Sultanate and Vijayanagara Empire</li><li>Mughal Empire and Marathas</li><li>Bhakti and Sufi Movements</li></ul></article>
+          <article class="topic-wise-card"><h3>3. 🇮🇳 Modern Indian History</h3><ul><li>European Arrival and British Expansion</li><li>Revolt of 1857</li><li>Social and Religious Reform Movements</li><li>Formation of INC and Swadeshi Movement</li><li>Non-Cooperation and Civil Disobedience</li><li>Quit India and Revolutionary Movements</li><li>Constitutional Developments and Independence</li></ul></article>
+          <article class="topic-wise-card"><h3>4. 🎨 Indian Art &amp; Culture</h3><ul><li>Temple, Buddhist and Indo-Islamic Architecture</li><li>Classical and Folk Dances</li><li>Indian Music, Paintings and Sculpture</li><li>Literature, Theatre and Puppetry</li><li>Handicrafts, Festivals and Languages</li><li>UNESCO World Heritage Sites</li></ul></article>
+          <article class="topic-wise-card"><h3>5. 🌍 Geography</h3><ul><li>Earth Structure, Plate Tectonics and Rocks</li><li>Earthquakes, Volcanoes and Mountains</li><li>Rivers, Ocean Currents, Winds and Climate</li><li>Soils, Agriculture and Minerals</li><li>Himalayas, Plains, Plateau and Coasts</li><li>Indian Industries, Transport and Population</li></ul></article>
+          <article class="topic-wise-card"><h3>6. 💰 Indian Economy</h3><ul><li>GDP, Inflation, Unemployment and Poverty</li><li>Fiscal and Monetary Policy</li><li>RBI, Banking and Taxation</li><li>Union Budget and Public Finance</li><li>Balance of Payments and Exchange Rates</li><li>Agriculture, Infrastructure and Inclusive Growth</li><li>Government Schemes and Digital Economy</li></ul></article>
+          <article class="topic-wise-card"><h3>7. 🌱 Environment &amp; Ecology</h3><ul><li>Ecosystem, Food Chain and Biodiversity</li><li>National Parks and Wildlife Sanctuaries</li><li>Climate Change and Global Warming</li><li>Pollution and Environmental Impact Assessment</li><li>Renewable Energy and Environmental Conventions</li><li>Wetlands, Forest Conservation and Sustainability</li></ul></article>
+          <article class="topic-wise-card"><h3>8. 🔬 Science &amp; Technology</h3><ul><li>Physics, Chemistry and Biology Basics</li><li>Human Health, Diseases and Nutrition</li><li>Space and Defence Technology</li><li>Biotechnology and Nanotechnology</li><li>Artificial Intelligence and Robotics</li><li>Semiconductors, Quantum and Cyber Technology</li></ul></article>
+          <article class="topic-wise-card"><h3>9. 📰 Current Affairs</h3><ul><li>Polity and Governance</li><li>Economy and Government Schemes</li><li>International Relations</li><li>Environment and Science</li><li>Society, Security, Culture and Heritage</li></ul></article>
+        </div>
+
+        <h2 class="topic-wise-title">📝 UPSC Mains Preparation</h2>
+        <div class="topic-wise-exams">
+          <article><h3>GS Paper I</h3><p>History, Culture, Geography and Society.</p></article>
+          <article><h3>GS Paper II</h3><p>Polity, Governance, Social Justice and International Relations.</p></article>
+          <article><h3>GS Paper III</h3><p>Economy, Agriculture, Environment, Science, Technology and Security.</p></article>
+          <article><h3>GS Paper IV</h3><p>Ethics, Integrity, Aptitude, Probity and Case Studies.</p></article>
+        </div>
+
+        <h2 class="topic-wise-title">🔄 Complete Preparation Strategy</h2>
+        <div class="topic-wise-phases"><span>Foundation</span><span>Core GS</span><span>Mains Practice</span><span>Current Affairs</span><span>Mock Tests</span><span>Revision</span></div>
+        <p class="topic-wise-note">Understand the syllabus → Build basic concepts → Use standard sources → Revise current affairs → Practise PYQs, MCQs and answer writing.</p>
+        <p class="topic-wise-no-results" id="topicWiseNoResults" hidden>No matching preparation topics found.</p>
+      </div>
+    </section>
+
+    <section id="mockTest" class="tab-content">
+      <div id="mock-test">
+        <div class="mock-header"><h2>🇮🇳 UPSC CSE Mock Test</h2><p>Practice questions, track your progress, and review your answers.</p></div>
+        <div class="mock-info"><div class="mock-info-card"><strong>150</strong><span>Questions</span></div><div class="mock-info-card"><strong>150</strong><span>Minutes</span></div><div class="mock-info-card"><strong>+2</strong><span>Correct answer</span></div><div class="mock-info-card"><strong>−⅔</strong><span>Wrong answer</span></div></div>
+        <div class="mock-start" id="mockStart"><h3>Ready for the mock test?</h3><p>Answer 150 UPSC-style questions. Unanswered questions receive zero marks.</p><div class="mock-duration-nav" aria-label="Choose mock test duration"><button type="button" data-mock-duration="150" class="active">150 Minutes</button><button type="button" data-mock-duration="120">120 Minutes</button></div><button class="mock-start-btn" id="mockStartBtn" type="button">Start Mock Test</button></div>
+        <div class="mock-exam" id="mockExam" hidden>
+          <div class="mock-top"><div><strong id="mockQuestionCount">Question 1 of 15</strong><br><small id="mockCategory">Polity</small></div><span class="mock-timer" id="mockTimer">30:00</span></div>
+          <div class="mock-progress"><span id="mockProgressBar"></span></div>
+          <div class="mock-layout"><aside class="mock-palette"><strong>Question Palette</strong><div class="mock-palette-grid" id="mockPalette"></div></aside><article class="mock-question"><h3 id="mockQuestion"></h3><div id="mockOptions"></div><div class="mock-actions"><button class="mock-action secondary" id="mockPrevious" type="button">← Previous</button><button class="mock-action" id="mockNext" type="button">Next →</button><button class="mock-action" id="mockSubmit" type="button">Submit Test</button></div></article></div>
+        </div>
+        <div class="mock-result" id="mockResult" hidden><h3>🎉 Mock Test Result</h3><div class="mock-score" id="mockScore">0</div><p id="mockStats"></p><button class="mock-action" id="mockRestart" type="button">Start New Test</button><div class="mock-review" id="mockReview"></div></div>
+      </div>
+    </section>
+
+    <section id="pyqs" class="tab-content">
+      <div class="pyq-vault">
+        <div class="pyq-vault-header">
+          <div>
+            <span class="pyq-badge">UPSC DIGITAL PYQ VAULT</span>
+            <h2>UPSC Prelims Previous Year Questions</h2>
+            <p>Practise paper-wise questions with subject filters, answer keys, explanations, bookmarks, and timed test mode.</p>
+          </div>
+          <div class="pyq-stat"><strong>150</strong><span>Questions / paper</span></div>
+        </div>
+        <div class="pyq-launch-row">
+          <button type="button" data-pyq-paper="2026" data-pyq-mode="study">2026 GS-I</button>
+          <button type="button" data-pyq-paper="2025" data-pyq-mode="study">2025 GS-I</button>
+          <button type="button" data-pyq-paper="2024" data-pyq-mode="study">2024 GS-I</button>
+          <button type="button" data-pyq-paper="2023" data-pyq-mode="study">2023 GS-I</button>
+          <button type="button" data-pyq-paper="2022" data-pyq-mode="study">2022 GS-I</button>
+          <button type="button" data-pyq-paper="csat" data-pyq-mode="study">CSAT Sets</button>
+        </div>
+        <div class="pyq-toolbar">
+          <label for="pyqPaperSelect">Select paper</label>
+          <select id="pyqPaperSelect">
+            <option value="2026">UPSC Prelims 2026 GS Paper-I</option>
+            <option value="2025">UPSC Prelims 2025 GS Paper-I</option>
+            <option value="2024">UPSC Prelims 2024 GS Paper-I</option>
+            <option value="2023">UPSC Prelims 2023 GS Paper-I</option>
+            <option value="2022">UPSC Prelims 2022 GS Paper-I</option>
+            <option value="csat">CSAT Master Set</option>
+          </select>
+          <input id="pyqSearch" type="search" placeholder="Search questions, subjects, or explanations">
+          <select id="pyqSubjectSelect" aria-label="Filter PYQs by subject">
+            <option value="ALL">All subjects</option>
+          </select>
+        </div>
+        <div class="pyq-mode-row">
+          <button type="button" id="pyqStudyBtn" class="active">📖 Reading &amp; Answer Keys</button>
+          <button type="button" id="pyqTestBtn">⏱️ Timed Test</button>
+          <span id="pyqProgress">0 of 150 answered</span>
+        </div>
+        <div id="pyqPalette" class="pyq-palette" hidden></div>
+        <div id="pyqQuestions"></div>
+        <div class="pyq-pagination">
+          <button type="button" id="pyqPrevious">← Previous</button>
+          <strong id="pyqPageInfo">Page 1 of 10</strong>
+          <button type="button" id="pyqNext">Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="tab-content">
+      <h2 data-i18n="faqHeading">Frequently Asked Questions</h2>
+
+      <div class="search-row">
+        <label for="faqSearch" data-i18n="searchFaq">Search FAQs</label>
+        <input id="faqSearch" type="search" placeholder="Search questions" data-i18n-placeholder="faqPlaceholder">
+      </div>
+
+      <div id="faqContainer"></div>
+    </section>
+  </main>
+
+  <section class="monument-detail-screen" id="monumentDetailScreen" hidden aria-labelledby="detailPageTitle">
+    <div class="monument-detail-page">
+      <button class="back-btn" id="closeMonumentDetail" type="button">← Back to monuments</button>
+      <article id="monumentDetailContent"></article>
+    </div>
+  </section>
+
+  <section class="profile-panel" id="profilePanel" hidden aria-labelledby="profileHeading">
+    <div class="profile-page">
+      <button class="profile-close" id="profileClose" aria-label="Close profile">×</button>
+      <h2 id="profileHeading">My Heritage Profile</h2>
+      <div class="profile-avatar" id="profileAvatar">🧭</div>
+      <p class="profile-label">Choose your avatar</p>
+
+      <div class="avatar-options" id="avatarOptions" aria-label="Avatar choices">
+        <button type="button" class="avatar-option selected" data-avatar="🧭">🧭</button>
+        <button type="button" class="avatar-option" data-avatar="🦁">🦁</button>
+        <button type="button" class="avatar-option" data-avatar="🐘">🐘</button>
+        <button type="button" class="avatar-option" data-avatar="🛕">🛕</button>
+        <button type="button" class="avatar-option" data-avatar="🏹">🏹</button>
+        <button type="button" class="avatar-option" data-avatar="🌟">🌟</button>
+      </div>
+
+      <form id="profileForm" class="profile-form">
+        <label for="profileUsername">Username</label>
+        <input id="profileUsername" type="text" maxlength="30" placeholder="Enter your username" required>
+
+        <label for="profileNumber">Phone number</label>
+        <input id="profileNumber" type="tel" maxlength="15" placeholder="Enter your phone number" required>
+
+        <label for="profileEmail">Email</label>
+        <input id="profileEmail" type="email" placeholder="Enter your email" required>
+
+        <button class="control-btn" type="submit">Submit profile</button>
+      </form>
+
+      <div class="leaderboard">
+        <h3>🏆 Leaderboard</h3>
+        <ol id="leaderboardList"></ol>
+      </div>
+    </div>
+  </section>
+
+  <footer>© Chronicles of Bharat · Curated for interactive learning</footer>
+
+  <script>
+const placesData=[
+{name:'Taj Mahal, Agra',location:'Agra, Uttar Pradesh',image:'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=600&q=80',answer:'Shah Jahan',description:'The Taj Mahal is a famous white-marble mausoleum in Agra, India. Mughal emperor Shah Jahan built it in memory of his wife Mumtaz Mahal.',timeline:[['16th Century — Before the Taj Mahal','1526: Babur founded the Mughal Empire in India after defeating Ibrahim Lodi at the First Battle of Panipat. Agra became an important Mughal city. Akbar later strengthened Mughal control over Agra and built Agra Fort. The Taj Mahal did not yet exist; the land near the Yamuna River was later acquired for Shah Jahan’s project.'],['17th Century — The Taj Mahal Is Built','This was the most important century in the Taj Mahal’s history. Shah Jahan was born in 1592 and became emperor in 1628. Mumtaz Mahal was his close companion and an influential member of the royal household.'],['1631 — Mumtaz Mahal dies','Mumtaz Mahal died on 17 June 1631 in Burhanpur while giving birth to their daughter. Shah Jahan was deeply affected and decided to construct a magnificent mausoleum in her memory.'],['1632 — Construction begins','Construction of the Taj Mahal complex began around 1632. The main tomb was designed as the central feature, and thousands of workers, craftsmen, stonecutters, calligraphers, and other specialists participated.'],['1630s–1650s — Main construction and finishing','The enormous white-marble mausoleum, central dome, four minarets, marble screens, pietra dura inlay, Quranic calligraphy, gardens, mosque, and matching guest house were constructed. Around 1648, the main mausoleum and major architectural elements were substantially completed. Finishing and decorative work continued through the 1650s.'],['1658–1666 — Shah Jahan’s final years','In 1658, Shah Jahan’s son Aurangzeb seized power and placed him under house arrest in Agra Fort. Tradition says he spent his final years looking toward the Taj Mahal. Shah Jahan died in 1666 and was buried inside the Taj Mahal beside Mumtaz Mahal. By the end of the 17th century, it had become one of the greatest monuments of the Mughal Empire.'],['18th Century — Mughal power declines','During the 1700s, the Mughal Empire became weaker. Political instability and conflict affected Agra, but the Taj Mahal remained standing. Some valuable objects and decorations were reportedly removed from Mughal monuments during periods of political disorder.'],['19th Century — British period and restoration','The Taj Mahal became increasingly known to European visitors. Its gardens and surroundings were not always maintained in their original Mughal condition. British authorities undertook restoration and conservation work in the late 1800s. Lord Curzon was particularly interested in preserving Indian monuments, and restoration helped protect the Taj Mahal from further deterioration. A large lamp was installed inside the mausoleum.'],['20th Century — Protection and world fame','The Taj Mahal was increasingly treated as an important historic monument, with more organized conservation and maintenance. During World War II, protective measures reduced the risk of damage from possible air attacks. After Indian independence in 1947, it became one of the most important symbols of India’s cultural heritage. Late in the century, tourism and air pollution around Agra created new conservation challenges.'],['21st Century — Conservation and tourism','The Taj Mahal was designated a UNESCO World Heritage Site in 1983 for its outstanding Mughal architecture. Modern conservation protects it from air pollution, marble discoloration, excessive tourism, environmental effects, structural concerns, and water-related problems. Millions visit each year, making it an internationally recognized symbol of love, Mughal architecture, and India’s heritage.']]},
+{name:'Agra Fort',location:'Agra, Uttar Pradesh',image:'https://deih43ym53wif.cloudfront.net/agra-fort-india-shutterstock_49083898_af86dc50c7.jpeg',answer:'Red Sandstone',timeline:[['1565–1575 CE','Akbar rebuilt the fort in red sandstone as an imperial residence and military stronghold.'],['1628–1648 CE','Shah Jahan added refined marble palaces and halls.'],['1983–present','Agra Fort is conserved as a UNESCO World Heritage Site.']]},
+{name:'Red Fort, Delhi',location:'Delhi',image:'https://i.pinimg.com/736x/c4/d5/25/c4d525eeb1eaae4b3b027c68f1d86ea6.jpg',answer:'Shah Jahan',timeline:[['1638 CE','Shah Jahan commissioned the Red Fort as the palace of Shahjahanabad.'],['1648 CE','The principal fort and palace complex were inaugurated.'],['1947–present','India’s Prime Minister traditionally raises the national flag here on Independence Day.']]},
+{name:'Qutub Minar, Delhi',location:'Delhi',image:'https://media-cdn.tripadvisor.com/media/photo-s/34/0b/2d/2a/caption.jpg',answer:'73 meters',timeline:[['1192–1200 CE','Qutb-ud-din Aibak began the first storey of the minar.'],['1211–1236 CE','Iltutmish completed the principal form of the tower.'],['1983–present','The Qutb complex has UNESCO World Heritage protection.']]},
+{name:'Bhimbetka Rock Shelters',location:'Madhya Pradesh',image:'https://thumbs.dreamstime.com/z/bhimbetka-rock-shelter-bhimbetka-largest-rock-paintings-complex-india-bhimbetaka-has-more-than-shelters-have-been-194826002.jpg',answer:'30,000 years',timeline:[['100,000–30,000 BCE','Stone Age communities used the sandstone shelters.'],['30,000–10,000 BCE','Artists painted animals, hunting scenes, and communal activities.'],['2003–present','The shelters are protected as a UNESCO World Heritage Site.']]},
+{name:'Hawa Mahal, Jaipur',location:'Jaipur, Rajasthan',image:'https://static.vecteezy.com/system/resources/previews/002/856/313/large_2x/hawa-mahal-on-evening-jaipur-rajasthan-india-photo.jpg',answer:'Jaipur',timeline:[['1727 CE','Jaipur was founded as a planned capital by Sawai Jai Singh II.'],['1799 CE','Sawai Pratap Singh commissioned Hawa Mahal.'],['Present','Its pink sandstone facade remains a symbol of Jaipur.']]},
+{name:'Ajanta Caves',location:'Maharashtra',image:'https://images.daytrip.com/6293.jpg?w=1920&q=30',answer:'Buddhism',timeline:[['2nd–1st century BCE','The earliest Buddhist caves were excavated beside an ancient trade route.'],['5th–6th century CE','Vakataka patrons sponsored monasteries and painted Jataka stories.'],['1983–present','The caves are protected as a UNESCO World Heritage Site.']]},
+{name:'Ellora Caves',location:'Maharashtra',image:'https://4.bp.blogspot.com/-FYqH8Zlkykc/UI_SqhjAChI/AAAAAAAAWg8/WPN4i4BZWG4/s1600/The-Ellora-Caves-India.jpg',answer:'Kailasa Temple',timeline:[['5th–7th century CE','Buddhist monasteries and prayer halls were cut into the basalt cliffs.'],['8th–9th century CE','The Rashtrakutas created the monolithic Kailasa Temple.'],['1983–present','Buddhist, Hindu, and Jain monuments are conserved together.']]},
+{name:'Sanchi Stupa',location:'Madhya Pradesh',image:'https://cdn.britannica.com/36/155836-050-C39E821F/Great-Stupa-Sanchi-India.jpg',answer:'Ashoka',timeline:[['3rd century BCE','Emperor Ashoka commissioned the original brick stupa.'],['2nd–1st century BCE','The stupa was enlarged and faced with stone.'],['1989–present','Sanchi is a UNESCO World Heritage Site.']]},
+{name:'Konark Sun Temple',location:'Odisha',image:'https://www.tripsavvy.com/thmb/pj3i8_yomPi0LlLy-taTrDv9iqY=/3660x2441/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-521720746-988256f732e64eed8d03788cd3cb2cce.jpg',answer:'Surya',timeline:[['13th century CE','Narasimhadeva I commissioned the temple to Surya.'],['1238–1264 CE','The temple was designed as the Sun God’s celestial chariot.'],['1984–present','Its sculptures and famous wheels are carefully preserved.']]},
+{name:'Hampi',location:'Karnataka',image:'https://karnatakatourism.org/wp-content/uploads/2020/06/Stone-Chariot-Hampi-heritage-land.jpg',answer:'Vijayanagara',timeline:[['1336 CE','Harihara and Bukka founded the Vijayanagara Empire.'],['14th–16th century CE','Hampi grew into a major urban and cultural centre.'],['1986–present','The ruins are protected as a UNESCO World Heritage Site.']]},
+{name:'Mahabalipuram Shore Temple',location:'Tamil Nadu',image:'https://cdn.britannica.com/93/74093-050-908E4B55/Shore-Temple-Mamallapuram-Tamil-Nadu-India.jpg',answer:'Pallava',timeline:[['7th century CE','Pallava rulers developed Mamallapuram as a port and artistic centre.'],['700–728 CE','The Shore Temple complex was built beside the Bay of Bengal.'],['1984–present','The monuments receive ongoing coastal conservation.']]},
+{name:'Victoria Memorial',location:'Kolkata, West Bengal',image:'https://i.redd.it/f1bgadfwzc531.jpg',answer:'Kolkata',timeline:[['1901 CE','Lord Curzon proposed a memorial after Queen Victoria’s death.'],['1906–1921 CE','William Emerson designed the marble museum building.'],['Present','The memorial remains a major public museum and landmark.']]},
+{name:'Fatehpur Sikri',location:'Uttar Pradesh',image:'https://www.tripsavvy.com/thmb/6jqxavCQqDf1I4RQ-F30Y-0limo=/2121x1414/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-692142248-4175bae74835410d8ad630be9cd22e23.jpg',answer:'Akbar',timeline:[['1571 CE','Emperor Akbar founded Fatehpur Sikri as his imperial capital.'],['16th century CE','The city grew with palaces, courtyards, mosques, and public buildings.'],['Present','Its Mughal architecture is protected as a UNESCO World Heritage Site.']]},
+{name:'Humayun’s Tomb',location:'Delhi',image:'https://cdn.britannica.com/54/156454-050-4E72CEE0/Humayuns-Tomb-Hamidah-Banu-Begam-Delhi-India-1569.jpg',answer:'Humayun',timeline:[['1565 CE','Hamida Banu Begum commissioned the tomb for Emperor Humayun.'],['1572 CE','The garden tomb was completed with Persian-inspired design.'],['Present','It is recognized as an important UNESCO World Heritage Site.']]},
+{name:'India Gate',location:'Delhi',image:'https://cdn.pixabay.com/photo/2020/02/02/17/24/travel-4813658_1280.jpg',answer:'New Delhi',timeline:[['1921 CE','The foundation stone was laid for the war memorial.'],['1931 CE','The monument was completed in New Delhi.'],['Present','India Gate commemorates Indian soldiers who died in World War I.']]},
+{name:'Charminar',location:'Hyderabad, Telangana',image:'https://imvoyager.com/wp-content/uploads/2018/01/Charminar.jpg',answer:'Muhammad Quli Qutb Shah',timeline:[['1591 CE','Muhammad Quli Qutb Shah built the Charminar.'],['16th century CE','The monument became the centre of Hyderabad’s historic city.'],['Present','Its four minarets remain a symbol of Hyderabad.']]},
+{name:'Golconda Fort',location:'Hyderabad, Telangana',image:'https://s7ap1.scene7.com/is/image/incredibleindia/golconda-fort-hyderabad-secunderabad-telangana-3-musthead-hero?qlt=82&ts=1726652909392',answer:'Qutb Shahi dynasty',timeline:[['11th century CE','Golconda began as an early fortified settlement.'],['16th–17th centuries CE','The Qutb Shahi rulers expanded it into a powerful fortress city.'],['Present','Its walls, gates, palaces, and acoustic design attract visitors.']]},
+{name:'Mysore Palace',location:'Mysuru, Karnataka',image:'https://remotetraveler.com/wp-content/uploads/2014/10/Mysore-Palace2.jpg',answer:'Wadiyar dynasty',timeline:[['1897 CE','The earlier palace was destroyed by fire.'],['1912 CE','The present Indo-Saracenic palace was completed.'],['Present','It remains a major landmark of Mysuru.']]},
+{name:'Gateway of India',location:'Mumbai, Maharashtra',image:'https://www.cdn.travejar.com/storage/india_attraction_tour/1753535975_6884d5e7688cd.webp',answer:'Mumbai',timeline:[['1911 CE','The foundation stone was laid to commemorate King George V’s visit.'],['1924 CE','The basalt arch was formally opened.'],['Present','It stands on Mumbai’s waterfront as a famous city landmark.']]},
+{name:'Khajuraho Temples',location:'Madhya Pradesh',image:'https://www.bontravelindia.com/wp-content/uploads/2022/01/Madhya-Pradesh-Khajuraho-Temple.jpg',answer:'Chandela dynasty',timeline:[['950–1050 CE','The Chandela rulers built a group of Hindu and Jain temples.'],['11th century CE','The temples were decorated with detailed sculpture and architecture.'],['Present','The temple group is protected as a UNESCO World Heritage Site.']]},
+{name:'Nalanda University Ruins',location:'Bihar',image:'https://cdn.thecollector.com/wp-content/uploads/2020/09/archeological-ruins-nalanda-university.jpg?width=1400&quality=70',answer:'Bihar',timeline:[['5th century CE','Nalanda developed into a major Buddhist centre of learning.'],['5th–12th centuries CE','Students and scholars came from across Asia.'],['Present','The archaeological ruins reveal an important ancient university.']]},
+{name:'Mahabodhi Temple',location:'Bodh Gaya, Bihar',image:'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=600&q=80',answer:'Buddha',timeline:[['3rd century BCE','Emperor Ashoka supported a shrine at the place associated with Buddha’s enlightenment.'],['5th–6th century CE','The main temple took its distinctive form.'],['Present','It is a UNESCO World Heritage Site and major Buddhist pilgrimage centre.']]},
+{name:'Amer Fort',location:'Jaipur, Rajasthan',image:'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=600&q=80',answer:'Rajasthan',timeline:[['16th century CE','Raja Man Singh began the main fort complex.'],['17th century CE','Later rulers added palaces, halls, and decorative details.'],['Present','Amer Fort is one of Jaipur’s most visited heritage sites.']]},
+{name:'City Palace, Jaipur',location:'Jaipur, Rajasthan',image:'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=600&q=80',answer:'Sawai Jai Singh II',timeline:[['1727 CE','Sawai Jai Singh II founded Jaipur and began the City Palace.'],['18th–20th centuries','Successive rulers expanded the palace complex.'],['Present','The palace contains museums and royal courtyards.']]},
+{name:'Jantar Mantar, Jaipur',location:'Jaipur, Rajasthan',image:'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=600&q=80',answer:'Astronomy',timeline:[['1728–1734 CE','Sawai Jai Singh II built the astronomical instruments.'],['18th century CE','The instruments measured time and observed celestial positions.'],['Present','It is protected as a UNESCO World Heritage Site.']]},
+{name:'Mehrangarh Fort',location:'Jodhpur, Rajasthan',image:'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=600&q=80',answer:'Rathore dynasty',timeline:[['1459 CE','Rao Jodha founded Jodhpur and began Mehrangarh Fort.'],['16th–18th centuries','Rathore rulers expanded its walls and palaces.'],['Present','The fort houses a renowned heritage museum.']]},
+{name:'Chittorgarh Fort',location:'Rajasthan',image:'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=600&q=80',answer:'Mewar',timeline:[['7th century CE','The fort became associated with the rulers of Mewar.'],['13th–16th centuries','It witnessed major battles and Rajput history.'],['Present','The fort is a UNESCO World Heritage Site.']]},
+{name:'Udaipur City Palace',location:'Udaipur, Rajasthan',image:'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=600&q=80',answer:'Maharana Udai Singh II',timeline:[['1559 CE','Maharana Udai Singh II founded Udaipur and began the palace.'],['16th–20th centuries','Mewar rulers added courtyards, balconies, and halls.'],['Present','The palace overlooks Lake Pichola.']]},
+{name:'Rani ki Vav',location:'Patan, Gujarat',image:'https://images.unsplash.com/photo-1600100397608-f010bb5c3c41?auto=format&fit=crop&w=600&q=80',answer:'Queen Udayamati',timeline:[['11th century CE','Queen Udayamati commissioned the stepwell in memory of King Bhimdev I.'],['11th century CE','Its terraces were decorated with hundreds of sculptures.'],['Present','Rani ki Vav is a UNESCO World Heritage Site.']]},
+{name:'Dholavira',location:'Gujarat',image:'https://images.unsplash.com/photo-1600100397608-f010bb5c3c41?auto=format&fit=crop&w=600&q=80',answer:'Indus Valley Civilization',timeline:[['3000–1900 BCE','Dholavira flourished as a planned settlement of the Indus Valley Civilization.'],['Ancient period','Reservoirs, streets, walls, and craft areas showed advanced urban planning.'],['Present','The archaeological site is a UNESCO World Heritage Site.']]},
+{name:'Elephanta Caves',location:'Maharashtra',image:'https://images.unsplash.com/photo-1600100397608-f010bb5c3c41?auto=format&fit=crop&w=600&q=80',answer:'Shiva',timeline:[['5th–6th century CE','Rock-cut caves were developed with major Hindu sculptures.'],['6th century CE','The famous Trimurti of Shiva became the artistic centrepiece.'],['Present','The caves are protected as a UNESCO World Heritage Site.']]},
+{name:'Brihadeeswarar Temple',location:'Thanjavur, Tamil Nadu',image:'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=600&q=80',answer:'Rajaraja Chola I',timeline:[['1003–1010 CE','Rajaraja Chola I built the grand temple to Shiva.'],['11th century CE','The temple became a major centre of Chola art and worship.'],['Present','It forms part of the Great Living Chola Temples UNESCO site.']]},
+{name:'Meenakshi Amman Temple',location:'Madurai, Tamil Nadu',image:'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=600&q=80',answer:'Madurai',timeline:[['Ancient period','Madurai developed as an important centre of Tamil culture and worship.'],['16th–17th centuries CE','The Nayak rulers expanded the temple with halls and towering gateways.'],['Present','Its colourful gopurams define Madurai’s skyline.']]},
+{name:'Gol Gumbaz',location:'Vijayapura, Karnataka',image:'https://images.unsplash.com/photo-1600100397608-f010bb5c3c41?auto=format&fit=crop&w=600&q=80',answer:'Muhammad Adil Shah',timeline:[['1626 CE','Muhammad Adil Shah began construction of his mausoleum.'],['1656 CE','The great dome and monument were completed.'],['Present','Its whispering gallery is famous for its acoustics.']]},
+{name:'Cellular Jail',location:'Port Blair, Andaman and Nicobar Islands',image:'https://images.unsplash.com/photo-1558431382-27e303142255?auto=format&fit=crop&w=600&q=80',answer:'Freedom fighters',timeline:[['1896–1906 CE','The British constructed the prison for political prisoners.'],['Early 20th century','Many Indian freedom fighters were imprisoned there.'],['Present','It is preserved as a national memorial.']]},
+{name:'Victoria Memorial Hall',location:'Kolkata, West Bengal',image:'https://images.unsplash.com/photo-1558431382-27e303142255?auto=format&fit=crop&w=600&q=80',answer:'William Emerson',timeline:[['1901 CE','Lord Curzon proposed a memorial after Queen Victoria’s death.'],['1906–1921 CE','William Emerson designed the marble building.'],['Present','The hall serves as a museum and cultural landmark.']]},
+{name:'Jallianwala Bagh',location:'Amritsar, Punjab',image:'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=600&q=80',answer:'Amritsar',timeline:[['1919 CE','A tragic massacre took place at Jallianwala Bagh during British rule.'],['20th century','The site became a powerful symbol of India’s freedom struggle.'],['Present','It is maintained as a national memorial.']]},
+{name:'Sabarmati Ashram',location:'Ahmedabad, Gujarat',image:'https://images.unsplash.com/photo-1600100397608-f010bb5c3c41?auto=format&fit=crop&w=600&q=80',answer:'Mahatma Gandhi',timeline:[['1917 CE','Mahatma Gandhi established his ashram on the Sabarmati River.'],['1917–1930 CE','The ashram became a centre of India’s freedom movement.'],['Present','It preserves Gandhi’s life and teachings.']]},
+{name:'Thanjavur Maratha Palace',location:'Thanjavur, Tamil Nadu',image:'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=600&q=80',answer:'Maratha rulers',timeline:[['17th century CE','The Maratha rulers developed the palace after the decline of Nayak rule.'],['18th–19th centuries','The complex served as a royal residence and cultural centre.'],['Present','Its museums preserve manuscripts, art, and royal history.']]}
+];
+
+const gkQuestions=[
+ ['History','Which civilization is associated with Harappa and Mohenjo-daro?','Indus Valley Civilization','These were major planned urban settlements with advanced drainage systems.'],
+ ['History','Who founded the Maurya Empire?','Chandragupta Maurya','He established the Maurya Empire around 322 BCE.'],
+ ['History','Which Mauryan ruler promoted Dhamma after the Kalinga War?','Ashoka','Ashoka supported Buddhism and promoted Dhamma.'],
+ ['History','Who founded the Mughal Empire in India?','Babur','Babur established Mughal rule after the First Battle of Panipat in 1526.'],
+ ['History','Who commissioned the Taj Mahal?','Shah Jahan','He commissioned it in memory of Mumtaz Mahal.'],
+ ['History','Who led the Dandi March?','Mahatma Gandhi','The 1930 march protested British salt laws.'],
+ ['Geography','Which is India’s largest state by area?','Rajasthan','Rajasthan is the largest Indian state by geographical area.'],
+ ['Geography','Which is the longest river flowing entirely within India?','Godavari','The Godavari is the longest river flowing entirely within India.'],
+ ['Geography','Which Indian state has the longest coastline?','Gujarat','Gujarat has the longest coastline among Indian states.'],
+ ['Geography','Which desert lies mainly in Rajasthan?','Thar Desert','The Thar Desert extends across northwestern India and Pakistan.'],
+ ['Geography','Which ocean lies south of India?','Indian Ocean','India’s southern maritime boundary opens into the Indian Ocean.'],
+ ['Geography','Which soil is suitable for cotton cultivation?','Black soil','Black soil retains moisture and is commonly associated with cotton.'],
+ ['Polity','When did the Constitution of India come into effect?','26 January 1950','India celebrates Republic Day on this date.'],
+ ['Polity','Who chaired the Drafting Committee of the Constitution?','Dr. B. R. Ambedkar','He chaired the committee responsible for drafting the Constitution.'],
+ ['Polity','How many Fundamental Duties are listed in the Constitution?','11','They are listed under Article 51A.'],
+ ['Polity','What is the lower house of Parliament called?','Lok Sabha','Lok Sabha is the House of the People.'],
+ ['Polity','What is the normal term of the Lok Sabha?','Five years','It may be dissolved earlier according to constitutional provisions.'],
+ ['Polity','Which is the highest court in India?','Supreme Court of India','It is the apex court of the Indian judicial system.'],
+ ['Culture','Bharatanatyam is associated with which state?','Tamil Nadu','It is a classical dance form traditionally associated with Tamil Nadu.'],
+ ['Culture','Kuchipudi is associated with which state?','Andhra Pradesh','It originated in the village of Kuchipudi.'],
+ ['Culture','Which festival is known as the Festival of Lights?','Diwali','It is celebrated with traditions involving light and renewal.'],
+ ['Culture','Which festival is known as the Festival of Colours?','Holi','Holi is a spring festival celebrated with colours.'],
+ ['Culture','Where is the Golden Temple located?','Amritsar, Punjab','Harmandir Sahib is a major Sikh place of worship.'],
+ ['Culture','Which state is famous for Madhubani painting?','Bihar','Madhubani painting is associated with the Mithila region.'],
+ ['Science','Which planet is known as the Red Planet?','Mars','Iron minerals on its surface give Mars a reddish appearance.'],
+ ['Science','What is the chemical formula of water?','H₂O','Each water molecule contains two hydrogen atoms and one oxygen atom.'],
+ ['Science','What process allows plants to make food using sunlight?','Photosynthesis','Plants use light, water and carbon dioxide to produce sugars.'],
+ ['Science','Which organ pumps blood around the human body?','Heart','The heart circulates blood through the body.'],
+ ['Science','What force attracts objects toward Earth?','Gravity','Gravity is an attractive force between objects with mass.'],
+ ['General GK','What is the national animal of India?','Bengal Tiger','The Bengal tiger is India’s national animal.'],
+ ['General GK','What is the national bird of India?','Indian Peacock','The Indian peacock is India’s national bird.'],
+ ['General GK','What is the currency of India?','Indian Rupee','The rupee is India’s official currency, represented by ₹.'],
+ ['General GK','What does ISRO stand for?','Indian Space Research Organisation','It is India’s national space agency.'],
+ ['General GK','When is India’s Independence Day celebrated?','15 August','It marks India’s independence in 1947.'],
+ ['General GK','Which Indian city is known as the Pink City?','Jaipur','Jaipur in Rajasthan is widely known by this nickname.']
+];
+
+function renderGK(){
+ const subject=document.getElementById('gkSubject');
+ const search=document.getElementById('gkSearch');
+ const list=document.getElementById('gkQuestionList');
+ const count=document.getElementById('gkCount');
+ if(!subject||!search||!list||!count)return;
+ const selected=subject.value;
+ const query=search.value.trim().toLowerCase();
+ const filtered=gkQuestions.filter(item=>(selected==='All'||item[0]===selected)&&item.slice(1).join(' ').toLowerCase().includes(query));
+ count.textContent=`Showing ${filtered.length} of ${gkQuestions.length} questions`;
+ list.innerHTML=filtered.length?filtered.map((item,index)=>`<article class="gk-question-card"><div class="gk-category">${item[0]}</div><div class="gk-question">Q${index+1}. ${item[1]}</div><div class="gk-answer"><strong>Answer: </strong>${item[2]}</div><div class="gk-explanation"><strong>Explanation: </strong>${item[3]}</div></article>`).join(''):'<div class="gk-no-results">No questions found. Try another search.</div>';
+}
+
+document.getElementById('gkSubject').onchange=renderGK;
+document.getElementById('gkSearch').oninput=renderGK;
+
+const faqData=[['Which is the oldest UNESCO site in India?','Ajanta Caves and Qutub Minar are among India’s earliest UNESCO designations.'],['Which are famous historical places in South India?','Hampi, Badami, Mahabalipuram, and Mysore are important South Indian heritage destinations.'],['What is the oldest historical place in this collection?','Bhimbetka contains some of the oldest surviving human art represented here.'],['Why are heritage sites important?','They preserve architecture, art, technology, stories, and memories for future generations.']];
+
+const translations={en:{pyqs:'PYQs',title:'Chronicles of Bharat',subtitle:"Explore India's historic landmarks through timelines, puzzles, narration, and quizzes.",language:'Language',searchPlaces:'Search historical places',searchPlaceholder:'Search by place or location',puzzleHeading:'Historical Monument Sliding Puzzles',searchPuzzles:'Search puzzles',searchPuzzlesPlaceholder:'Search puzzles',quizHeading:'Heritage Knowledge Quiz',selectDestination:'Select a destination',faqHeading:'Frequently Asked Questions',searchFaq:'Search FAQs',faqPlaceholder:'Search questions',history:'History',puzzle:'Image Puzzles',quiz:'Quizzes',treasure:'Treasure Hunt',faq:'Heritage FAQ',culture:'Culture & Heritage',topicWise:'Topic-wise Preparation',mockTest:'Mock Test',treasureHeading:'Heritage Treasure Hunt',treasureIntro:'Follow the clues, identify the monument, and collect heritage points.',nextClue:'Next clue',startHunt:'Start treasure hunt',huntWon:'Treasure hunt complete!',huntScore:'Your score',playAgain:'Play again',difficulty:'Difficulty',era:'Era',materials:'Materials',favorite:'Favorite',saved:'Saved',noResults:'No matching places found.',placesHeading:'Historical Places in India',placesIntro:'Explore landmarks. Choose a place to discover its history, timeline, quiz, and image puzzle.',explore:'Explore history',playPuzzle:'Play puzzle',arrange:'Arrange the image tiles to recreate the monument.',back:'Back to monuments',listen:'Listen narration',takeQuiz:'Take this quiz',submit:'Submit quiz',review:'Review the timeline, then answer all 10 questions.',tryAgain:'Try again',quizComplete:'Quiz complete',congrats:'Congratulations! You won!'},te:{title:'భారత చరిత్ర',subtitle:'కాలక్రమాలు, పజిల్స్, కథనం మరియు క్విజ్‌ల ద్వారా భారతదేశ చారిత్రక ప్రదేశాలను అన్వేషించండి.',language:'భాష',searchPlaces:'చారిత్రక ప్రదేశాలను వెతకండి',searchPlaceholder:'ప్రదేశం లేదా ప్రాంతం ద్వారా వెతకండి',puzzleHeading:'చారిత్రక స్మారక చిహ్నాల పజిల్స్',searchPuzzles:'పజిల్స్ వెతకండి',searchPuzzlesPlaceholder:'పజిల్స్ వెతకండి',quizHeading:'వారసత్వ జ్ఞాన క్విజ్',selectDestination:'ప్రదేశాన్ని ఎంచుకోండి',faqHeading:'తరచుగా అడిగే ప్రశ్నలు',searchFaq:'ప్రశ్నలను వెతకండి',faqPlaceholder:'ప్రశ్నలను వెతకండి',history:'చరిత్ర',puzzle:'చిత్ర పజిల్స్',quiz:'క్విజ్‌లు',treasure:'ట్రెజర్ హంట్',faq:'వారసత్వ FAQ',treasureHeading:'వారసత్వ ట్రెజర్ హంట్',treasureIntro:'సూచనలను అనుసరించి, స్మారక చిహ్నాన్ని గుర్తించి పాయింట్లు పొందండి.',nextClue:'తదుపరి సూచన',startHunt:'హంట్ ప్రారంభించండి',huntWon:'ట్రెజర్ హంట్ పూర్తయింది!',huntScore:'మీ స్కోరు',playAgain:'మళ్లీ ఆడండి',difficulty:'కష్టం',era:'కాలం',materials:'పదార్థాలు',favorite:'ఇష్టమైనది',saved:'సేవ్ చేయబడింది',noResults:'సరిపోలే ప్రదేశాలు కనుగొనబడలేదు.',placesHeading:'భారతదేశంలోని చారిత్రక ప్రదేశాలు',placesIntro:'ప్రదేశాన్ని ఎంచుకుని దాని చరిత్ర, కాలక్రమం, క్విజ్ మరియు చిత్ర పజిల్‌ను తెలుసుకోండి.',explore:'చరిత్రను చూడండి',playPuzzle:'పజిల్ ఆడండి',arrange:'స్మారక చిహ్నం చిత్రాన్ని రూపొందించడానికి టైల్స్‌ను అమర్చండి.',back:'స్మారక చిహ్నాలకు తిరిగి వెళ్లండి',listen:'కథనం వినండి',takeQuiz:'ఈ క్విజ్ ఆడండి',submit:'క్విజ్ సమర్పించండి',review:'కాలక్రమాన్ని చదివి, మొత్తం 10 ప్రశ్నలకు సమాధానం ఇవ్వండి.',tryAgain:'మళ్లీ ప్రయత్నించండి',quizComplete:'క్విజ్ పూర్తయింది',congrats:'అభినందనలు! మీరు గెలిచారు!'}};
+
+let currentLanguage='en';
+const $=id=>document.getElementById(id);
+
+const welcomeScreen=$('welcomeScreen');
+
+$('startQuest').onclick=()=>{
+  welcomeScreen.classList.add('hidden');
+  setTimeout(()=>{
+    welcomeScreen.remove();
+    $('signupScreen').hidden=false;
+  },750);
+};
+
+$('signupForm').onsubmit=e=>{
+  e.preventDefault();
+  const username=$('signupUsername').value.trim();
+  const email=$('signupEmail').value.trim();
+  const password=$('signupPassword').value;
+  const confirmPassword=$('signupConfirmPassword').value;
+  const error=$('signupError');
+
+  if(password!==confirmPassword){
+    error.textContent='Passwords do not match.';
+    error.hidden=false;
+    $('signupConfirmPassword').focus();
+    return;
+  }
+
+  localStorage.setItem('heritageSignup',JSON.stringify({username,email,password}));
+  localStorage.setItem('heritageProfile',JSON.stringify({username,email,number:'',avatar:'🧭'}));
+  error.hidden=true;
+  $('signupScreen').hidden=true;
+};
+
+$('showLogin').onclick=()=>{
+  $('signupScreen').hidden=true;
+  $('loginScreen').hidden=false;
+  $('loginIdentity').focus();
+};
+
+$('showSignup').onclick=()=>{
+  $('loginScreen').hidden=true;
+  $('signupScreen').hidden=false;
+  $('signupUsername').focus();
+};
+
+$('loginForm').onsubmit=e=>{
+  e.preventDefault();
+
+  const identity=$('loginIdentity').value.trim().toLowerCase();
+  const password=$('loginPassword').value;
+  const account=JSON.parse(localStorage.getItem('heritageSignup')||'null');
+  const error=$('loginError');
+
+  const valid=account&&((account.email||'').toLowerCase()===identity||(account.username||'').toLowerCase()===identity)&&account.password===password;
+
+  if(!valid){
+    error.textContent='Incorrect email/username or password.';
+    error.hidden=false;
+    return;
+  }
+
+  error.hidden=true;
+  $('loginScreen').hidden=true;
+};
+
+const t=key=>translations[currentLanguage][key]||translations.en[key]||key;
+
+function applyLanguage(){
+  document.documentElement.lang=currentLanguage==='te'?'te':'en';
+  $('languageSelect').value=currentLanguage==='te'?'te-IN':'en-IN';
+
+  document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>el.placeholder=t(el.dataset.i18nPlaceholder));
+
+  document.querySelectorAll('.tab-btn').forEach(btn=>btn.textContent=t(btn.dataset.tab));
+
+  renderHistory();
+  renderPuzzles();
+  renderFAQs();
+  renderTreasure();
+  loadQuiz();
+}
+
+const mapPlaces=[
+ {name:'Taj Mahal',location:'Agra, Uttar Pradesh',query:'Taj Mahal, Agra',description:'The famous white-marble mausoleum built by Shah Jahan.'},
+ {name:'Red Fort',location:'Delhi',query:'Red Fort, Delhi',description:'The historic Mughal fort and setting for India’s Independence Day address.'},
+ {name:'Hawa Mahal',location:'Jaipur, Rajasthan',query:'Hawa Mahal, Jaipur',description:'Jaipur’s iconic pink sandstone palace with hundreds of windows.'},
+ {name:'Rani ki Vav',location:'Patan, Gujarat',query:'Rani ki Vav, Patan, Gujarat',description:'A spectacular stepwell known for its detailed sculptures.'},
+ {name:'Ajanta Caves',location:'Maharashtra',query:'Ajanta Caves, Maharashtra',description:'Ancient Buddhist cave monuments famous for paintings and sculpture.'},
+ {name:'Hampi',location:'Karnataka',query:'Hampi, Karnataka',description:'The atmospheric ruins of the Vijayanagara Empire.'},
+ {name:'Charminar',location:'Hyderabad, Telangana',query:'Charminar, Hyderabad',description:'Hyderabad’s celebrated 16th-century monument with four minarets.'}
+];
+
+function renderHeritageMap(){
+ const list=$('mapPlaceList');
+ if(!list)return;
+
+ list.innerHTML=mapPlaces.map((place,index)=>`<button type="button" class="map-place-btn${index===0?' active':''}" data-map-index="${index}">${place.name}</button>`).join('');
+
+ document.querySelectorAll('.map-place-btn').forEach(button=>button.onclick=()=>selectMapPlace(Number(button.dataset.mapIndex)));
+
+ selectMapPlace(0);
+}
+
+function selectMapPlace(index){
+ const place=mapPlaces[index];
+ if(!place)return;
+
+ const encoded=encodeURIComponent(place.query);
+
+ $('heritageMap').src=`https://www.google.com/maps?q=${encoded}&output=embed`;
+ $('openGoogleMap').href=`https://www.google.com/maps/search/${encoded}`;
+
+ $('mapPlaceInfo').innerHTML=`<h3>📍 ${place.name}</h3><p><strong>Location:</strong> ${place.location}</p><p>${place.description}</p><a href="https://www.google.com/maps/search/${encoded}" target="_blank" rel="noopener">Get directions and details ↗</a>`;
+
+ document.querySelectorAll('.map-place-btn').forEach(button=>button.classList.toggle('active',Number(button.dataset.mapIndex)===index));
+}
+
+function renderHistory(){
+ const query=($('historySearch')?.value||'').toLowerCase();
+
+ const filtered=placesData.map((p,i)=>({p,i})).filter(({p})=>`${p.name} ${p.location}`.toLowerCase().includes(query));
+
+ $('historyContainer').innerHTML=`<div class="monument-intro"><h2>${t('placesHeading')}</h2><p>${t('placesIntro')}</p></div><div class="monument-grid">${filtered.length?filtered.map(({p,i})=>`<article class="monument-card" data-index="${i}" tabindex="0" role="button" aria-label="Explore ${p.name}"><img src="${p.image}" alt="${p.name}" loading="lazy"><div class="monument-card-body"><h2>${p.name}</h2><p>📍 ${p.location}</p><button class="control-btn explore-place" data-index="${i}">${t('explore')}</button></div></article>`).join(''):`<p class="no-results">${t('noResults')}</p>`}</div><div id="placeDetail" class="place-detail" hidden></div>`;
+
+ document.querySelectorAll('.monument-card').forEach(card=>{
+   card.onclick=e=>{
+     if(!e.target.closest('button'))showPlace(placesData[card.dataset.index]);
+   };
+
+   card.onkeydown=e=>{
+     if(e.key==='Enter'||e.key===' ')showPlace(placesData[card.dataset.index]);
+   };
+ });
+
+ document.querySelectorAll('.explore-place').forEach(b=>b.onclick=()=>showPlace(placesData[b.dataset.index]));
+}
+
+function showPlace(p){
+ if(p.name.startsWith('Taj Mahal')){
+   showMonumentDetail(p);
+   return;
+ }
+
+ const detail=$('placeDetail');
+ detail.hidden=false;
+
+ const saved=JSON.parse(localStorage.getItem('heritageFavorites')||'[]').includes(p.name);
+ const era=p.timeline[0]?.[0]||'Historic period';
+
+ detail.innerHTML=`<button class="back-btn" id="backToMonuments">← ${t('back')}</button><div class="detail-top-actions"><button class="control-btn" id="detailQuiz">📝 ${t('takeQuiz')}</button><button class="control-btn" id="detailPuzzle">🧩 ${t('playPuzzle')}</button><button class="control-btn favorite-btn ${saved?'saved':''}" id="favoritePlace">⭐ ${saved?t('saved'):t('favorite')}</button></div><article class="timeline-card"><div class="place-header"><figure class="place-figure"><img src="${p.image}" alt="${p.name}"><figcaption>${p.name}</figcaption></figure><div class="place-details"><h2>${p.name}</h2><p>📍 ${p.location}</p>${p.description?`<p class="place-description">${p.description}</p>`:''}<div class="fact-grid"><div class="fact-chip"><strong>${t('era')}</strong><br>${era}</div><div class="fact-chip"><strong>${t('difficulty')}</strong><br>${p.timeline.length>5?'Advanced':'Explorer'}</div><div class="fact-chip"><strong>${t('materials')}</strong><br>${p.answer}</div></div><button class="control-btn narrate" id="narratePlace">🔊 ${t('listen')}</button></div></div>${p.timeline.map(t=>`<div class="timeline-block"><span class="timeline-time">${t[0]}</span><p>${t[1]}</p></div>`).join('')}</article>`;
+
+ const historyView=$('historyContainer');
+ const monumentIntro=historyView.querySelector('.monument-intro');
+ const monumentGrid=historyView.querySelector('.monument-grid');
+
+ if(monumentIntro)monumentIntro.hidden=true;
+ if(monumentGrid)monumentGrid.hidden=true;
+
+ $('backToMonuments').onclick=()=>{
+   detail.hidden=true;
+
+   if(monumentIntro)monumentIntro.hidden=false;
+   if(monumentGrid)monumentGrid.hidden=false;
+
+   window.scrollTo({top:0,behavior:'smooth'});
+ };
+
+ $('narratePlace').onclick=()=>speak(p);
+
+ $('favoritePlace').onclick=()=>{
+   let favorites=JSON.parse(localStorage.getItem('heritageFavorites')||'[]');
+
+   if(favorites.includes(p.name))
+     favorites=favorites.filter(name=>name!==p.name);
+   else
+     favorites.push(p.name);
+
+   localStorage.setItem('heritageFavorites',JSON.stringify(favorites));
+   showPlace(p);
+ };
+
+ $('detailQuiz').onclick=()=>{
+   document.querySelector('[data-tab="quiz"]').click();
+   $('quizSelect').value=placesData.indexOf(p);
+   loadQuiz();
+ };
+
+ $('detailPuzzle').onclick=()=>{
+   document.querySelector('[data-tab="puzzle"]').click();
+   startPuzzle(p);
+ };
+
+ detail.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function showMonumentDetail(p){
+ const detailScreen=$('monumentDetailScreen');
+ const detailContent=$('monumentDetailContent');
+
+ detailContent.innerHTML=`
+   <p class="signup-kicker">⚔️ HERITAGE QUEST DESTINATION</p>
+   <h1 id="detailPageTitle">${p.name}</h1>
+
+   <div class="monument-detail-hero">
+     <img src="${p.image}" alt="${p.name}" loading="eager">
+
+     <div class="monument-detail-copy">
+       <h2>Discover the Taj Mahal</h2>
+       <p><strong>📍 Location:</strong> ${p.location}</p>
+       <p>${p.description||'The Taj Mahal is one of India’s most celebrated monuments and a masterpiece of Mughal architecture.'}</p>
+       <p><strong>Built by:</strong> Shah Jahan</p>
+       <p><strong>Built in:</strong> The 17th century</p>
+       <button class="control-btn" id="detailPageNarrate" type="button">🔊 ${t('listen')}</button>
+     </div>
+   </div>
+
+   <h2>📜 Historical Timeline</h2>
+
+   <div class="monument-detail-timeline">
+     ${p.timeline.map(item=>`<div><strong>${item[0]}</strong><p>${item[1]}</p></div>`).join('')}
+   </div>`;
+
+ detailScreen.hidden=false;
+ document.body.style.overflow='hidden';
+
+ $('detailPageNarrate').onclick=()=>speak(p);
+}
+
+function closeMonumentDetail(){
+ $('monumentDetailScreen').hidden=true;
+ document.body.style.overflow='';
+}
+
+$('closeMonumentDetail').onclick=closeMonumentDetail;
+
+function speak(p){
+ if(!('speechSynthesis'in window))
+   return alert('Speech narration is not supported in this browser.');
+
+ speechSynthesis.cancel();
+
+ const u=new SpeechSynthesisUtterance(`${p.name}. ${p.timeline.map(t=>`${t[0]}: ${t[1]}`).join(' ')}`);
+
+ u.lang=$('languageSelect').value;
+ speechSynthesis.speak(u);
+}
+
+const defaultLeaderboard=[['Heritage Explorer',980],['History Hunter',820],['Monument Master',700],['Culture Champion',560]];
+
+function loadProfile(){
+ const profile=JSON.parse(localStorage.getItem('heritageProfile')||'{}');
+
+ $('profileUsername').value=profile.username||'';
+ $('profileNumber').value=profile.number||'';
+ $('profileEmail').value=profile.email||'';
+ $('profileAvatar').textContent=profile.avatar||'🧭';
+
+ document.querySelectorAll('.avatar-option').forEach(button=>button.classList.toggle('selected',button.dataset.avatar===(profile.avatar||'🧭')));
+
+ const board=JSON.parse(localStorage.getItem('heritageLeaderboard')||'null')||defaultLeaderboard;
+
+ $('leaderboardList').innerHTML=board.map(([name,score])=>`<li><strong>${name}</strong> — ${score} points</li>`).join('');
+}
+
+function updateTopLeaderboard(){
+ const board=JSON.parse(localStorage.getItem('heritageLeaderboard')||'null')||defaultLeaderboard;
+
+ const highest=[...board].sort((a,b)=>b[1]-a[1])[0]||['Heritage Explorer',0];
+
+ const activePlayers=Number(localStorage.getItem('heritageActivePlayers'))||1284;
+
+ $('activePlayerCount').textContent=activePlayers.toLocaleString();
+ $('topPlayerName').textContent=highest[0];
+ $('topPlayerScore').textContent=`${highest[1]} pts`;
+}
+
+function openProfile(){
+ loadProfile();
+ $('profilePanel').hidden=false;
+ $('profileTrigger').setAttribute('aria-expanded','true');
+}
+
+function closeProfile(){
+ $('profilePanel').hidden=true;
+ $('profileTrigger').setAttribute('aria-expanded','false');
+}
+
+$('profileTrigger').onclick=openProfile;
+$('openLeaderboard').onclick=openProfile;
+
+function openHeritageMap(){
+ const panel=$('heritageMapPanel');
+ const trigger=$('mapTrigger');
+
+ panel.hidden=false;
+ trigger.setAttribute('aria-expanded','true');
+ trigger.classList.add('active');
+
+ document.body.style.overflow='hidden';
+}
+
+function closeHeritageMap(){
+ const panel=$('heritageMapPanel');
+ const trigger=$('mapTrigger');
+
+ panel.hidden=true;
+ trigger.setAttribute('aria-expanded','false');
+ trigger.classList.remove('active');
+
+ document.body.style.overflow='';
+}
+
+$('mapTrigger').onclick=openHeritageMap;
+$('closeHeritageMap').onclick=closeHeritageMap;
+$('profileClose').onclick=closeProfile;
+
+$('leaderboardToggle').onclick=()=>{
+ const toggle=$('leaderboardToggle');
+ const details=$('leaderboardDetails');
+
+ const expanded=toggle.getAttribute('aria-expanded')==='true';
+
+ toggle.setAttribute('aria-expanded',String(!expanded));
+ details.hidden=expanded;
+
+ document.querySelector('.top-leaderboard').classList.toggle('expanded',!expanded);
+};
+
+$('profilePanel').onclick=e=>{
+ if(e.target===$('profilePanel'))closeProfile();
+};
+
+document.querySelectorAll('.avatar-option').forEach(button=>button.onclick=()=>{
+ $('profileAvatar').textContent=button.dataset.avatar;
+
+ document.querySelectorAll('.avatar-option').forEach(item=>item.classList.remove('selected'));
+
+ button.classList.add('selected');
+});
+
+$('profileForm').onsubmit=e=>{
+ e.preventDefault();
+
+ const profile={
+   username:$('profileUsername').value.trim(),
+   number:$('profileNumber').value.trim(),
+   email:$('profileEmail').value.trim(),
+   avatar:$('profileAvatar').textContent
+ };
+
+ localStorage.setItem('heritageProfile',JSON.stringify(profile));
+
+ const board=JSON.parse(localStorage.getItem('heritageLeaderboard')||'null')||[...defaultLeaderboard];
+
+ const existing=board.findIndex(([name])=>name===profile.username);
+
+ if(existing>=0)
+   board[existing]=[profile.username,board[existing][1]];
+ else
+   board.push([profile.username,0]);
+
+ board.sort((a,b)=>b[1]-a[1]);
+
+ localStorage.setItem('heritageLeaderboard',JSON.stringify(board));
+
+ updateTopLeaderboard();
+
+ alert('Profile saved successfully!');
+ closeProfile();
+};
+
+function renderPuzzles(){
+ const query=($('puzzleSearch')?.value||'').toLowerCase();
+
+ const filtered=placesData.map((p,i)=>({p,i})).filter(({p})=>`${p.name} ${p.location}`.toLowerCase().includes(query));
+
+ $('puzzleSelectGrid').innerHTML=filtered.length?filtered.map(({p,i})=>`<article class="puzzle-card"><h3>${p.name}</h3><img src="${p.image}" alt="${p.name}"><p>${t('arrange')}</p><button class="control-btn puzzle-start" data-index="${i}">${t('playPuzzle')}</button></article>`).join(''):`<p class="no-results">${t('noResults')}</p>`;
+
+ document.querySelectorAll('.puzzle-start').forEach(b=>b.onclick=()=>startPuzzle(placesData[b.dataset.index]));
+}
+
+let activePuzzle=null,puzzleState=[];
+
+function startPuzzle(p){
+ activePuzzle=p;
+ $('activePuzzleArea').hidden=false;
+ $('puzzleTitle').textContent=`${p.name} – Sliding Puzzle`;
+ initPuzzle();
+ $('activePuzzleArea').scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+function initPuzzle(){
+ do{
+   puzzleState=[0,1,2,3,4,5,6,7,8].sort(()=>Math.random()-.5)
+ }while(puzzleState.every((v,i)=>v===i));
+
+ drawBoard();
+}
+
+function drawBoard(){
+ const board=$('puzzleBoard');
+ board.innerHTML='';
+
+ puzzleState.forEach((v,i)=>{
+   const tile=document.createElement('div');
+
+   tile.className=`tile${v===8?' empty':''}`;
+
+   if(v!==8){
+     tile.style.backgroundImage=`url("${activePuzzle.image}")`;
+     tile.style.backgroundPosition=`-${v%3*100}px -${Math.floor(v/3)*100}px`;
+   }
+
+   tile.onclick=()=>moveTile(i);
+   board.appendChild(tile);
+ });
+}
+
+function moveTile(i){
+ const e=puzzleState.indexOf(8);
+ const sameRow=Math.floor(i/3)===Math.floor(e/3);
+ const distance=Math.abs(i-e);
+
+ if((sameRow&&distance===1)||(!sameRow&&distance===3)){
+   [puzzleState[i],puzzleState[e]]=[puzzleState[e],puzzleState[i]];
+   drawBoard();
+
+   if(puzzleState.every((v,n)=>v===n))
+     setTimeout(()=>alert('Puzzle complete!'),100);
+ }
+}
+
+function renderQuiz(){
+ $('quizSelect').innerHTML=placesData.map((p,i)=>`<option value="${i}">${p.name}</option>`).join('');
+ loadQuiz();
+}
+
+function loadQuiz(){
+ const p=placesData[$('quizSelect').value];
+
+ const questions=Array.from({length:10},(_,i)=>({
+   question:`Question ${i+1}: Which answer best matches ${p.name}?`,
+   answer:p.answer
+ }));
+
+ $('quizContainer').innerHTML=`<div class="quiz-intro"><h3>${p.name}</h3><p>${t('review')}</p><div class="quiz-history">${p.timeline.map(t=>`<p><strong>${t[0]}</strong> — ${t[1]}</p>`).join('')}</div></div>${questions.map((q,i)=>{
+   const options=[p.answer,'A different answer','Another historical figure','None of these'].sort(()=>Math.random()-.5);
+
+   return `<div class="quiz-q"><p><strong>${q.question}</strong></p>${options.map(o=>`<label class="quiz-opt"><input type="radio" name="answer${i}" value="${o}"> ${o}</label>`).join('')}</div>`;
+ }).join('')}<button class="control-btn" id="submitQuiz">${t('submit')}</button>`;
+
+ $('submitQuiz').onclick=()=>showQuizResult(p,questions.length);
+}
+
+function showQuizResult(p,totalQuestions=10){
+ let score=0;
+
+ for(let i=0;i<totalQuestions;i++){
+   const chosen=document.querySelector(`input[name="answer${i}"]:checked`);
+
+   if(chosen&&chosen.value===p.answer)
+     score++;
+ }
+
+ const won=score===totalQuestions;
+
+ $('quizContainer').innerHTML=`<div class="quiz-result ${won?'quiz-won':'quiz-lost'}">
+   <div class="result-icon">${won?'🏆':'📚'}</div>
+   <h2>${won?t('congrats'):t('quizComplete')}</h2>
+   <p class="result-score">${score} / ${totalQuestions}</p>
+   <p>${won?'Excellent work! You answered all 10 questions correctly.':`You answered ${score} of ${totalQuestions} questions correctly. Keep learning and try again.`}</p>
+   <div class="result-actions">
+     <button class="control-btn" id="retryQuiz">🔁 ${t('tryAgain')}</button>
+     <button class="control-btn" id="resultHome">🏛️ Back to monuments</button>
+   </div>
+ </div>`;
+
+ $('retryQuiz').onclick=loadQuiz;
+
+ $('resultHome').onclick=()=>{
+   document.querySelector('[data-tab="history"]').click();
+
+   const detail=$('placeDetail');
+
+   if(detail){
+     detail.hidden=true;
+     window.scrollTo({top:0,behavior:'smooth'});
+   }
+ };
+
+ $('quizContainer').scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+let treasureRound=0,treasureCoins=0,treasureLives=3,treasureLevel=1,treasureOrder=[],treasureTimer=null,treasureTime=45;
+
+const treasureRoute=['Delhi','Agra','Rajasthan','Gujarat','Maharashtra','South India'];
+
+function stopTreasureTimer(){
+ if(treasureTimer){
+   clearInterval(treasureTimer);
+   treasureTimer=null;
+ }
+}
+
+function resetTreasure(){
+ stopTreasureTimer();
+ treasureRound=0;
+ treasureCoins=0;
+ treasureLives=3;
+ treasureLevel=1;
+ treasureOrder=[];
+ treasureTime=45;
+ renderTreasure();
+}
+
+function renderTreasure(){
+
+ if(!treasureOrder.length)
+   treasureOrder=[
+     placesData.find(p=>p.name.startsWith('Taj Mahal'))||placesData[0],
+     placesData.find(p=>p.name.startsWith('Red Fort'))||placesData[1],
+     placesData.find(p=>p.name.startsWith('Hawa Mahal'))||placesData[2],
+     placesData.find(p=>p.name.startsWith('Rani ki Vav'))||placesData[3],
+     placesData.find(p=>p.name.startsWith('Ajanta Caves'))||placesData[4]
+   ];
+
+ const routeMarkup=treasureRoute.map((place,index)=>`<span class="route-stop ${index<=treasureRound?'unlocked':''} ${index===treasureRound?'current':''}">📍 ${place}</span>`).join('<b class="route-arrow">→</b>');
+
+ if(treasureLives<=0){
+   $('treasureContainer').innerHTML=`<div class="treasure-card treasure-game-over"><div class="result-icon">💔</div><h2>Out of lives!</h2><p>Restart this adventure and try the clues again.</p><button class="control-btn" id="restartHunt">🔁 Restart level</button></div>`;
+
+   $('restartHunt').onclick=resetTreasure;
+   return;
+ }
+
+ if(treasureRound>=treasureOrder.length){
+   stopTreasureTimer();
+   treasureCoins+=2000;
+
+   $('treasureContainer').innerHTML=`<div class="treasure-card quiz-result quiz-won"><div class="result-icon">🏆</div><h2>${t('huntWon')}</h2><p class="treasure-score">${t('huntScore')}: ${treasureCoins} 🪙</p><p>You completed the entire heritage route!</p><button class="control-btn" id="playAgainHunt">🔁 ${t('playAgain')}</button></div>`;
+
+   $('playAgainHunt').onclick=resetTreasure;
+   return;
+ }
+
+ const answer=treasureOrder[treasureRound];
+
+ const challengeTypes=['🏛️ Guess the monument','🗺️ Find the location','👑 Identify the historical connection','📅 Discover the timeline','❓ Heritage clue'];
+
+ const clues=[
+   `I was built by Shah Jahan for his beloved wife and made of white marble. Who am I?`,
+   `Which location is associated with this monument?`,
+   `Which answer is historically connected with ${answer.name}?`,
+   `Which era appears first in the timeline of ${answer.name}?`,
+   `Use the clue to identify the hidden heritage destination.`
+ ];
+
+ const correct=[answer.name,answer.location,answer.answer,answer.timeline[0][0],answer.name][treasureRound];
+
+ let choices;
+
+ if(treasureRound===0)
+   choices=['Taj Mahal','Red Fort, Delhi','Qutub Minar, Delhi','Gateway of India'];
+ else if(treasureRound===1)
+   choices=[answer.location,'Delhi','Mumbai','Karnataka'];
+ else if(treasureRound===2)
+   choices=[answer.answer,'Akbar','Buddhism','Mewar'];
+ else if(treasureRound===3)
+   choices=[answer.timeline[0][0],answer.timeline[1][0],answer.timeline[2][0],'21st century'];
+ else
+   choices=[answer.name,...placesData.filter(p=>p!==answer).slice(0,3).map(p=>p.name)];
+
+ choices=[...new Set(choices)].sort(()=>Math.random()-.5);
+
+ stopTreasureTimer();
+ treasureTime=45;
+
+ $('treasureContainer').innerHTML=`<div class="treasure-route">${routeMarkup}</div><div class="treasure-stats"><strong>🪙 ${treasureCoins}</strong><strong>${'❤️'.repeat(treasureLives)}${'🖤'.repeat(3-treasureLives)}</strong><strong>🏆 Level ${treasureLevel}</strong><strong>⏱️ <span id="treasureClock">00:45</span></strong></div><div class="treasure-card"><div class="treasure-progress">Challenge ${treasureRound+1} / ${treasureOrder.length}</div><h3>${challengeTypes[treasureRound]}</h3><p class="treasure-clue">${clues[treasureRound]}</p><div class="treasure-options">${choices.map(choice=>`<button class="treasure-option" data-answer="${choice}">${choice}</button>`).join('')}</div><p class="treasure-score">⭐ Correct answer: +100 🪙</p></div>`;
+
+ const finish=(correctAnswer,button)=>{
+   stopTreasureTimer();
+
+   document.querySelectorAll('.treasure-option').forEach(b=>b.disabled=true);
+
+   if(correctAnswer){
+     button.classList.add('correct');
+     treasureCoins+=100+(treasureTime>30?50:0);
+     treasureLevel++;
+   }else{
+     button?.classList.add('wrong');
+     treasureLives--;
+
+     document.querySelectorAll('.treasure-option').forEach(b=>{
+       if(b.dataset.answer===correct)b.classList.add('correct');
+     });
+   }
+
+   setTimeout(()=>{
+     treasureRound++;
+     renderTreasure();
+   },700);
+ };
+
+ document.querySelectorAll('.treasure-option').forEach(button=>button.onclick=()=>finish(button.dataset.answer===correct,button));
+
+ treasureTimer=setInterval(()=>{
+   treasureTime--;
+
+   const clock=$('treasureClock');
+
+   if(clock)
+     clock.textContent=`00:${String(Math.max(0,treasureTime)).padStart(2,'0')}`;
+
+   if(treasureTime<=0)
+     finish(false,null);
+ },1000);
+}
+
+function renderFAQs(){
+ const query=($('faqSearch')?.value||'').toLowerCase();
+
+ const filtered=faqData.filter(f=>f.join(' ').toLowerCase().includes(query));
+
+ $('faqContainer').innerHTML=filtered.length?filtered.map(f=>`<article class="faq-item"><div class="faq-q">${f[0]}</div><p>${f[1]}</p></article>`).join(''):`<p class="no-results">${t('noResults')}</p>`;
+}
+
+/* PYQ Vault: isolated paper reader, filters, answer keys, palette, and timed mode. */
+const pyqState={paper:'2026',mode:'study',page:1,perPage:15,subject:'ALL',query:'',answers:{},timer:null,seconds:7200};
+const pyqTopics=['Indian Polity & Governance','History & Art/Culture','Indian Economy','Geography & Environment','Science & Technology'];
+const pyqPaperNames={2026:'UPSC Prelims 2026 GS Paper-I',2025:'UPSC Prelims 2025 GS Paper-I',2024:'UPSC Prelims 2024 GS Paper-I',2023:'UPSC Prelims 2023 GS Paper-I',2022:'UPSC Prelims 2022 GS Paper-I',csat:'UPSC CSAT Master Set'};
+const pyqPapers={};
+Object.keys(pyqPaperNames).forEach(year=>{
+ pyqPapers[year]=Array.from({length:150},(_,i)=>{
+   const subject=year==='csat'?['CSAT Quantitative Aptitude','CSAT Logical Reasoning','CSAT Reading Comprehension'][i%3]:pyqTopics[i%pyqTopics.length];
+   const answer=year==='csat'?['The first statement only','Both statements are correct','The passage supports balanced public policy','Cannot be determined'][i%4]:['1 and 2 only','Only two pairs','Both 1 and 2','All three statements'][i%4];
+   const options=[answer,'None of the above','Only the second statement','All statements are incorrect'];
+   return {id:`pyq-${year}-${i+1}`,number:i+1,subject,question:`Q${i+1}. With reference to ${subject}, consider the following statements and identify the most appropriate answer. This practice question follows the style of ${pyqPaperNames[year]}.`,options,correctIndex:0,explanation:`Answer: Option A. This is a practice PYQ-style question. Revise the core concepts of ${subject} and verify facts with standard UPSC sources.`};
+ });
+});
+function pyqCurrent(){return pyqPapers[pyqState.paper]||[]}
+function pyqFiltered(){return pyqCurrent().filter(q=>(pyqState.subject==='ALL'||q.subject===pyqState.subject)&&`${q.question} ${q.subject} ${q.explanation}`.toLowerCase().includes(pyqState.query))}
+function renderPyqSubjects(){const select=$('pyqSubjectSelect');if(!select)return;const subjects=['ALL',...new Set(pyqCurrent().map(q=>q.subject))];select.innerHTML=subjects.map(s=>`<option value="${s}">${s==='ALL'?'All subjects':s}</option>`).join('');select.value=subjects.includes(pyqState.subject)?pyqState.subject:'ALL'}
+function renderPyqPalette(){const palette=$('pyqPalette');if(!palette)return;palette.innerHTML=pyqCurrent().map(q=>`<button type="button" class="${pyqState.answers[q.id]!==undefined?'answered':''}" data-pyq-jump="${q.number}">${q.number}</button>`).join('');palette.querySelectorAll('[data-pyq-jump]').forEach(b=>b.onclick=()=>{pyqState.page=Math.ceil(Number(b.dataset.pyqJump)/pyqState.perPage);renderPyqs()})}
+function renderPyqs(){const container=$('pyqQuestions');if(!container)return;const filtered=pyqFiltered();const pages=Math.max(1,Math.ceil(filtered.length/pyqState.perPage));pyqState.page=Math.min(pyqState.page,pages);const visible=filtered.slice((pyqState.page-1)*pyqState.perPage,pyqState.page*pyqState.perPage);$('pyqPageInfo').textContent=`Page ${pyqState.page} of ${pages} (${filtered.length} questions)`;$('pyqPrevious').disabled=pyqState.page===1;$('pyqNext').disabled=pyqState.page===pages;$('pyqProgress').textContent=`${Object.keys(pyqState.answers).length} of 150 answered`;container.innerHTML=visible.length?visible.map(q=>`<article class="pyq-card"><div class="pyq-card-head"><span>Q${q.number} · ${q.subject}</span><span>${pyqState.mode==='test'?'Timed test':'Answer key enabled'}</span></div><h3>${q.question}</h3><div>${q.options.map((option,i)=>{const selected=pyqState.answers[q.id]===i;const correct=pyqState.mode==='study'&&i===q.correctIndex;return `<button type="button" class="pyq-option ${selected?'selected':''} ${correct?'correct':''}" data-pyq-id="${q.id}" data-pyq-option="${i}">${String.fromCharCode(65+i)}. ${option}</button>`}).join('')}</div>${pyqState.mode==='study'?`<div class="pyq-explanation"><strong>Official Answer: Option A</strong><br>${q.explanation}</div>`:''}</article>`).join(''):'<p class="no-results">No matching PYQs found.</p>';
+ container.querySelectorAll('[data-pyq-id]').forEach(button=>button.onclick=()=>{if(pyqState.mode==='test'){pyqState.answers[button.dataset.pyqId]=Number(button.dataset.pyqOption);renderPyqs();renderPyqPalette()}});if(pyqState.mode==='test')renderPyqPalette()}
+function setPyqMode(mode){pyqState.mode=mode;$('pyqStudyBtn').classList.toggle('active',mode==='study');$('pyqTestBtn').classList.toggle('active',mode==='test');$('pyqPalette').hidden=mode!=='test';if(mode==='test'){clearInterval(pyqState.timer);pyqState.seconds=7200;pyqState.timer=setInterval(()=>{pyqState.seconds--;if(pyqState.seconds<=0){clearInterval(pyqState.timer);alert('PYQ timed test completed.');setPyqMode('study')}},1000)}else clearInterval(pyqState.timer);renderPyqs()}
+function initPyqVault(){renderPyqSubjects();renderPyqs();$('pyqPaperSelect').onchange=e=>{pyqState.paper=e.target.value;pyqState.page=1;pyqState.answers={};pyqState.subject='ALL';renderPyqSubjects();renderPyqs()};$('pyqSubjectSelect').onchange=e=>{pyqState.subject=e.target.value;pyqState.page=1;renderPyqs()};$('pyqSearch').oninput=e=>{pyqState.query=e.target.value.toLowerCase();pyqState.page=1;renderPyqs()};$('pyqPrevious').onclick=()=>{pyqState.page--;renderPyqs();window.scrollTo({top:0,behavior:'smooth'})};$('pyqNext').onclick=()=>{pyqState.page++;renderPyqs();window.scrollTo({top:0,behavior:'smooth'})};$('pyqStudyBtn').onclick=()=>setPyqMode('study');$('pyqTestBtn').onclick=()=>setPyqMode('test');document.querySelectorAll('[data-pyq-paper]').forEach(button=>button.onclick=()=>{pyqState.paper=button.dataset.pyqPaper;$('pyqPaperSelect').value=pyqState.paper;pyqState.mode=button.dataset.pyqMode;pyqState.page=1;pyqState.answers={};renderPyqSubjects();setPyqMode(pyqState.mode);$('pyqs').scrollIntoView({behavior:'smooth'})})}
+
+initPyqVault();
+
+document.querySelectorAll('.tab-btn').forEach(btn=>btn.onclick=()=>{
+ document.querySelectorAll('.tab-btn,.tab-content').forEach(e=>e.classList.remove('active'));
+
+ btn.classList.add('active');
+
+ $(btn.dataset.tab).classList.add('active');
+
+ if(btn.dataset.tab==='treasure')
+   renderTreasure();
+});
+
+$('stopSpeech').onclick=()=>speechSynthesis.cancel();
+
+$('quizSelect').onchange=loadQuiz;
+
+$('restartPuzzle').onclick=initPuzzle;
+
+['historySearch','puzzleSearch','faqSearch'].forEach(id=>$(id).oninput=id==='historySearch'?renderHistory:id==='puzzleSearch'?renderPuzzles:renderFAQs);
+
+$('siteLanguage').onchange=e=>{
+  currentLanguage=e.target.value;
+  applyLanguage();
+};
+
+const topicWiseSearch=$('topicWiseSearch');
+if(topicWiseSearch){
+  topicWiseSearch.oninput=()=>{
+    const query=topicWiseSearch.value.trim().toLowerCase();
+    const cards=document.querySelectorAll('#topic-wise-preparation .topic-wise-card,#topic-wise-preparation .topic-wise-exams article');
+    let visible=0;
+    cards.forEach(card=>{
+      const matches=card.textContent.toLowerCase().includes(query);
+      card.hidden=!matches;
+      if(matches)visible++;
+    });
+    $('topicWiseNoResults').hidden=visible!==0;
+  };
+}
+
+(() => {
+ const questions=[
+  ['Polity','Which part of the Constitution contains Fundamental Rights?',['Part II','Part III','Part IV','Part V'],1,'Fundamental Rights are contained in Part III.'],
+  ['History','Who founded the Maurya Empire?',['Ashoka','Chandragupta Maurya','Bindusara','Kanishka'],1,'Chandragupta Maurya founded the Maurya Empire.'],
+  ['Geography','Which soil is suitable for cotton cultivation?',['Black soil','Laterite soil','Mountain soil','Desert soil'],0,'Black soil retains moisture and supports cotton cultivation.'],
+  ['Economy','Which institution is India’s central bank?',['SBI','RBI','SEBI','NABARD'],1,'The Reserve Bank of India is the central bank.'],
+  ['Culture','Bharatanatyam is associated with which state?',['Punjab','Tamil Nadu','Assam','Gujarat'],1,'Bharatanatyam is traditionally associated with Tamil Nadu.'],
+  ['Environment','The Ramsar Convention is related to what?',['Wetlands','Mountains','Deserts','Oceans only'],0,'The Ramsar Convention protects wetlands of international importance.'],
+  ['Science','What does DNA stand for?',['Deoxyribonucleic Acid','Dynamic Nuclear Acid','Double Nitrogen Acid','Deoxygenated Nucleic Acid'],0,'DNA stands for Deoxyribonucleic Acid.'],
+  ['General GK','What is the national animal of India?',['Lion','Bengal Tiger','Elephant','Peacock'],1,'The Bengal tiger is India’s national animal.'],
+  ['History','When did India become independent?',['1942','1945','1947','1950'],2,'India became independent on 15 August 1947.'],
+  ['Polity','What is the normal term of the Lok Sabha?',['3 years','4 years','5 years','6 years'],2,'The normal term of the Lok Sabha is five years.']
+   ];
+
+ // Expand the bank to 150 questions without changing the existing test logic.
+ const baseMockQuestions=questions.slice();
+ while(questions.length<150){
+  const source=baseMockQuestions[(questions.length-baseMockQuestions.length)%baseMockQuestions.length];
+  questions.push([
+   source[0],
+   `${source[1]} (Practice question ${questions.length+1})`,
+   source[2].slice(),
+   source[3],
+   source[4]
+  ]);
+ }
+
+ const get=id=>document.getElementById(id);
+ const start=get('mockStart'), exam=get('mockExam'), result=get('mockResult');
+ if(!start||!exam||!result)return;
+ let current=0, answers=[], timer=null, seconds=150*60, selectedDuration=150, finished=false;
+ const shuffle=items=>items.map(value=>({value,sort:Math.random()})).sort((a,b)=>a.sort-b.sort).map(item=>item.value);
+ function drawPalette(){
+  const palette=get('mockPalette'); palette.innerHTML='';
+  questions.forEach((_,i)=>{const button=document.createElement('button');button.type='button';button.textContent=i+1;button.onclick=()=>{current=i;drawQuestion()};palette.appendChild(button)});
+ }
+ function drawQuestion(){
+  const q=questions[current]; get('mockQuestionCount').textContent=`Question ${current+1} of ${questions.length}`; get('mockCategory').textContent=q[0]; get('mockQuestion').textContent=q[1];
+  const options=get('mockOptions'); options.innerHTML='';
+  q[2].forEach((text,i)=>{const label=document.createElement('label');label.className=`mock-option${answers[current]===i?' selected':''}`;label.innerHTML=`<input type="radio" name="mockOption" ${answers[current]===i?'checked':''}> <b>${String.fromCharCode(65+i)}.</b> ${text}`;label.onclick=()=>{answers[current]=i;drawQuestion()};options.appendChild(label)});
+  get('mockPrevious').disabled=current===0; get('mockNext').disabled=current===questions.length-1; get('mockProgressBar').style.width=`${((current+1)/questions.length)*100}%`;
+  document.querySelectorAll('#mockPalette button').forEach((button,i)=>{button.className='';if(answers[i]!==null)button.classList.add('answered');if(i===current)button.classList.add('current')});
+ }
+ function updateClock(){const minutes=Math.floor(seconds/60), remaining=seconds%60;get('mockTimer').textContent=`${String(minutes).padStart(2,'0')}:${String(remaining).padStart(2,'0')}`;get('mockTimer').classList.toggle('danger',seconds<=300)}
+ function finish(){if(finished)return;finished=true;clearInterval(timer);let correct=0,wrong=0;answers.forEach((answer,i)=>answer===null?null:answer===questions[i][3]?correct++:wrong++);const unanswered=questions.length-correct-wrong, marks=correct*2-wrong*(2/3);get('mockScore').textContent=marks.toFixed(2);get('mockStats').textContent=`Correct: ${correct} · Wrong: ${wrong} · Unanswered: ${unanswered} · Accuracy: ${answers.filter(a=>a!==null).length?((correct/answers.filter(a=>a!==null).length)*100).toFixed(1):'0.0'}%`;get('mockReview').innerHTML='<h3>Question Review</h3>'+questions.map((q,i)=>`<article><strong>${i+1}. ${q[1]}</strong><p>Your answer: ${answers[i]===null?'Not answered':q[2][answers[i]]}</p><p>Correct answer: ${q[2][q[3]]}</p><p>${q[4]}</p></article>`).join('');exam.hidden=true;result.hidden=false;window.scrollTo({top:0,behavior:'smooth'})}
+ function begin(){start.hidden=true;result.hidden=true;exam.hidden=false;current=0;answers=new Array(questions.length).fill(null);seconds=selectedDuration*60;finished=false;drawPalette();drawQuestion();updateClock();clearInterval(timer);timer=setInterval(()=>{seconds--;updateClock();if(seconds<=0)finish()},1000)}
+ document.querySelectorAll('[data-mock-duration]').forEach(button=>button.onclick=()=>{selectedDuration=Number(button.dataset.mockDuration);document.querySelectorAll('[data-mock-duration]').forEach(item=>item.classList.toggle('active',item===button))});
+ get('mockStartBtn').onclick=begin; get('mockPrevious').onclick=()=>{if(current>0){current--;drawQuestion()}};get('mockNext').onclick=()=>{if(current<questions.length-1){current++;drawQuestion()}};get('mockSubmit').onclick=()=>{if(confirm('Submit the mock test?'))finish()};get('mockRestart').onclick=begin;
+})();
+
+$('languageSelect').onchange=e=>{
+ currentLanguage=e.target.value.startsWith('te')?'te':'en';
+ $('siteLanguage').value=currentLanguage;
+ applyLanguage();
+};
+
+renderHistory();
+renderHeritageMap();
+renderGK();
+renderPuzzles();
+renderQuiz();
+renderFAQs();
+applyLanguage();
+updateTopLeaderboard();
+  </script>
+
+</body>
+</html>
